@@ -1,0 +1,25 @@
+.swiper {
+  &-button {
+    &-prev,
+    &-next {
+      &::after {
+        display: none;
+      }
+
+      svg {
+        stroke: $darkGray;
+        @include ease;
+      }
+
+      &:hover {
+        svg {
+          stroke: $blue;
+        }
+      }
+
+      &.swiper-button-disabled {
+        opacity: 1;
+      }
+    }
+  }
+}

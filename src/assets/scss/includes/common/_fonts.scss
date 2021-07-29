@@ -1,0 +1,25 @@
+$mHairline: 'MullerHairline';
+$mThin: 'MullerThin';
+$mUltraLight: 'MullerUltraLight';
+$mLight: 'MullerLight';
+$mRegular: 'MullerRegular';
+$mMedium: 'MullerMedium';
+$mHeavy: 'MullerHeavy';
+$mBold: 'MullerBold';
+$mExtraBold: 'MullerExtraBold';
+$mBlack: 'MullerBlack';
+
+$gPro: 'GothamPro';
+$gProBlack: 'GothamProBlack';
+
+.font-mBold {
+  font-family: $mBold;
+}
+
+.font-mHeavy {
+  font-family: $mHeavy;
+}
+
+.fontLight {
+  font-family: $mLight;
+}

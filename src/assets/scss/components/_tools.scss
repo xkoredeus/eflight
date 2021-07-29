@@ -1,0 +1,89 @@
+.tools {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: '';
+    top: -60px;
+    width: 1px;
+    height: 120px;
+    background-color: $darkGray;
+    left: calc(50% - 1px);
+    @include r(1300) {
+      display: none;
+    }
+  }
+
+  &::after {
+    position: absolute;
+    content: '';
+    width: 100px;
+    height: 1px;
+    top: 60px;
+    background-color: $darkGray;
+    transform-origin: top right;
+    transform: rotate(-45deg);
+    right: calc(50% + 1px);
+
+    @include r(1572) {
+      width: 60px;
+    }
+
+    @include r(1300) {
+      display: none;
+    }
+  }
+
+  &__intro {
+    max-width: 410px;
+
+    @include r(1572) {
+      max-width: 370px;
+    }
+  }
+
+  &__picture {
+    position: absolute;
+    left: 0;
+    top: 0;
+    max-width: 100%;
+    height: auto;
+
+    @include r(768) {
+      position: relative;
+    }
+
+    &-wrapper {
+      position: relative;
+      min-height: 496px;
+      margin-bottom: 35px;
+
+      @include r(1200) {
+        min-height: 376px;
+      }
+
+      @include r(768) {
+        min-height: auto;
+      }
+    }
+  }
+
+  &__description {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    @include r(768) {
+      position: relative;
+    }
+
+    &-wrapper {
+      position: relative;
+      min-height: 140px;
+
+      @include r(768) {
+        min-height: auto;
+      }
+    }
+  }
+}

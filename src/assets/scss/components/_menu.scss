@@ -1,0 +1,262 @@
+.menu {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  color: $white;
+  background-color: $blue;
+  display: grid;
+  max-width: 22%;
+  height: calc(100vh - 145px);
+  min-height: 440px;
+  transform: translateY(-100%);
+  @include ease-in-out;
+
+  @include r(1572) {
+    height: calc(100vh - 101px);
+    max-width: 20%;
+  }
+
+  @include r(1200) {
+    max-width: 220px;
+  }
+
+  @include r(700) {
+    height: auto;
+    min-height: unset;
+    max-width: 100%;
+
+    border-top: 1px solid $white;
+    border-bottom: 1px solid $white;
+  }
+
+  &::before,
+  &__decoration {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: $blue;
+  }
+
+  &::before {
+    right: 100%;
+    border-right: 1px solid $white;
+  }
+
+  &__decoration {
+    left: 100%;
+    border-left: 1px solid $white;
+  }
+
+  &__in {
+    position: relative;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr auto auto;
+
+    @include r(700) {
+      grid-template-rows: auto;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 74px 0 15px 50px;
+    @include ease;
+    transform: translateY(-10px);
+    opacity: 0;
+    transition-delay: .65s;
+
+    @include r(700) {
+      padding: 30px 15px;
+    }
+
+    &-link {
+      font-size: 1.1rem;
+      color: $white;
+
+      @include r(1200) {
+        font-size: 1rem;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 5px;
+      }
+
+      &:hover {
+        color: $white;
+        opacity: .5;
+      }
+
+      &.link {
+        position: static;
+      }
+
+      &-wrapper {
+        width: 100%;
+        padding: 20px 0;
+
+        @include r(700) {
+          padding: 15px 0;
+        }
+
+        &--with-dropdown {
+          @include r(700) {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+          }
+          @include rmin(700) {
+            .menu__nav-link {
+              position: relative;
+              display: flex;
+              align-items: center;
+              z-index: 1;
+
+              &::after,
+              &::before {
+                content: '';
+                height: 1px;
+                background-color: $white;
+                opacity: 0;
+                visibility: hidden;
+                @include cubic
+              }
+
+              &::after {
+                flex-grow: 1;
+                width: 100%;
+              }
+
+              &::before {
+                position: absolute;
+                width: 40px;
+                left: calc(100% - 6px);
+                top: -3px;
+                transform: rotate(-45deg);
+              }
+
+              span {
+                margin-right: 10px;
+              }
+            }
+          }
+
+          &:hover {
+            @include rmin(700) {
+              .menu__dropdown {
+                opacity: 1;
+                visibility: visible;
+              }
+              .menu__nav-link {
+                &::before,
+                &::after {
+                  opacity: 1;
+                  visibility: visible;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__dropdown {
+    position: absolute;
+    left: calc(100% - 1px);
+    top: 0;
+    width: 395px;
+    height: calc(100vh - 145px);
+    background: $blue;
+    border-left: 1px solid $white;
+    padding: 74px 0 15px 50px;
+    opacity: 0;
+    visibility: hidden;
+    @include cubic;
+
+    @include r(1572) {
+      height: calc(100vh - 101px);
+    }
+
+    @include r(700) {
+      position: relative;
+      height: auto;
+      width: auto;
+      top: auto;
+      left: auto;
+      padding: 15px 0 15px;
+      opacity: 1;
+      visibility: visible;
+      border-left: none;
+      display: none;
+      transition: none;
+    }
+
+    &-link {
+      color: $white;
+      &:hover {
+        color: $white;
+        opacity: .5;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 15px;
+
+        @include r(700) {
+          margin-bottom: 6px;
+        }
+      }
+    }
+  }
+
+  &__info {
+    padding: 23px 19px;
+    border-top: 1px solid $white;
+
+    @include r(700) {
+      display: none;
+    }
+
+    &-item {
+      font-size: 0.85rem;
+      color: $white;
+      display: grid;
+      grid-template-columns: 15px 1fr;
+      grid-column-gap: 10px;
+      align-items: flex-start;
+
+      span {
+        @include ease;
+      }
+
+      svg {
+        @include ease;
+        fill: $white;
+      }
+
+      &:last-child {
+        align-items: center;
+        &:hover {
+          span {
+            color: $white;
+            opacity: .5;
+          }
+        }
+      }
+    }
+  }
+
+  &__copyrights {
+    font-size: 0.8rem;
+    padding: 23px 19px;
+    border-top: 1px solid $white;
+
+    @include r(700) {
+      display: none;
+    }
+  }
+}

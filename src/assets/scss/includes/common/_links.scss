@@ -1,0 +1,11 @@
+.link {
+  position: relative;
+  font-size: 0.9rem;
+  display: inline-block;
+  color: $darkGray;
+
+  &:hover,
+  &:active {
+    color: $blue;
+  }
+}

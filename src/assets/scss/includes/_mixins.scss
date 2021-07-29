@@ -1,0 +1,100 @@
+@mixin ct {
+  background-position: 50% 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+@mixin cv {
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+@mixin ovl {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+@mixin ease {
+  transition: .4s all ease;
+}
+
+@mixin ease-in-out {
+  transition: .6s all ease-in-out;
+}
+
+@mixin cubic {
+  transition: all .6s cubic-bezier(.23,1,.32,1);
+}
+
+@mixin cubic-long {
+  transition: all 1s cubic-bezier(.23,1,.32,1);
+}
+
+@mixin r($width) {
+  @media only screen and (max-width: $width + "px") {
+    @content
+  }
+}
+@mixin rmin($width) {
+  @media only screen and (min-width: $width + "px") {
+    @content
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+$layoutPadding: 112px;
+$layoutPadding1: 50px;
+$layoutPadding2: 30px;
+$layoutPadding3: 15px;
+
+@mixin layoutPaddings {
+  padding-left: $layoutPadding;
+  padding-right: $layoutPadding;
+  @include r(1572) {
+    padding-left: $layoutPadding1;
+    padding-right: $layoutPadding1;
+  }
+  @include r(1400) {
+    padding-left: $layoutPadding2;
+    padding-right: $layoutPadding2;
+  }
+  @include r(768) {
+    padding-left: $layoutPadding3;
+    padding-right: $layoutPadding3;
+  }
+}
+
+$containerPadding: 50px;
+$containerPadding1: 30px;
+$containerPadding2: 20px;
+$containerPadding3: 15px;
+
+@mixin containerPaddings {
+  padding-left: $containerPadding;
+  padding-right: $containerPadding;
+  @include r(1572) {
+    padding-left: $containerPadding1;
+    padding-right: $containerPadding1;
+  }
+  @include r(1400) {
+    padding-left: $containerPadding2;
+    padding-right: $containerPadding2;
+  }
+  @include r(768) {
+    padding-left: $containerPadding3;
+    padding-right: $containerPadding3;
+  }
+}
+
+@mixin layoutBorders {
+  border-left: 1px solid $darkGray;
+  border-right: 1px solid $darkGray;
+}

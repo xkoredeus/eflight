@@ -1,0 +1,46 @@
+button {
+  box-shadow: none;
+  border: none;
+  outline: none;
+  background-color: $tr;
+}
+
+.button {
+  position: relative;
+  font-size: 0.9rem;
+  color: $white;
+  text-align: center;
+  display: inline-block;
+  outline: none;
+  @include ease;
+  padding: 18px 42px;
+  background-color: $blue;
+
+  &:hover {
+    color: $white;
+    background-color: $darkBlue;
+  }
+
+  @include r(960) {
+    padding: 15px 25px;
+  }
+
+  &--icon {
+    @include flex-center;
+  }
+
+  &--outlined {
+    color: $dark;
+    background-color: $tr;
+    border: 1px solid $darkGray;
+
+    &:hover {
+      background-color: $blue;
+      border-color: $blue;
+    }
+  }
+
+  &--small-padding {
+    padding: 16px 25px;
+  }
+}

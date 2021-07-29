@@ -1,0 +1,146 @@
+.services {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: '';
+    width: 1px;
+    height: 80px;
+    background-color: $darkGray;
+    left: calc(50% - 1px);
+
+    @include r(1300) {
+      display: none;
+    }
+  }
+}
+
+.service {
+  position: relative;
+  color: $white;
+  background-color: $blue;
+  padding: 44px 0 30px 45px;
+  display: block;
+  height: 100%;
+  overflow: hidden;
+
+  @include r(1600) {
+    padding: 30px 0 15px 30px;
+  }
+
+  @include r(768) {
+    padding: 15px;
+  }
+
+  &:hover {
+    color: $white;
+
+    .service__link-arrow {
+      transform: translateX(0);
+    }
+    .service__picture {
+      transform: scale(0.96);
+    }
+  }
+
+  &--gray {
+    background-color: $gray;
+  }
+
+  &--dark-gray {
+    background-color: $darkGray;
+  }
+
+  &--color-dark {
+    color: $dark;
+
+    &:hover {
+      color: $dark;
+    }
+
+    .service__link-arrow {
+      stroke: $dark;
+    }
+
+    .service__text {
+      border-top-color: $dark;
+    }
+  }
+
+  &--wide {
+    .service__text {
+      max-width: 420px;
+
+      @include r(1572) {
+        max-width: 370px;
+      }
+    }
+  }
+
+  &__in {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+  }
+
+  &__text {
+    max-width: 307px;
+    line-height: 1.6;
+    padding-top: 25px;
+    border-top: 1px solid $white;
+
+    @include r(1600) {
+      font-size: .8rem;
+
+      &--tight {
+        max-width: 247px;
+      }
+    }
+
+    @include r(976) {
+      display: none;
+    }
+  }
+
+  &__title {
+    line-height: 1.6;
+    margin-bottom: 35px;
+
+    @include r(1572) {
+      line-height: 1.4;
+      margin-bottom: 20px;
+    }
+
+    @include r(600) {
+      font-size: 0.75rem;
+    }
+  }
+
+  &__link {
+    overflow: hidden;
+    display: inline-block;
+    margin-top: auto;
+
+    &-arrow {
+      margin-top: 28px;
+      transform: translateX(-50%);
+      stroke: $white;
+      @include ease;
+    }
+  }
+
+  &__picture {
+    position: absolute;
+    max-height: 70%;
+    right: 0;
+    bottom: 0;
+    @include ease;
+    transform-origin: right bottom;
+
+    @include r(1572) {
+      max-height: 55%;
+    }
+  }
+}

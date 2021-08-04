@@ -13,6 +13,7 @@
 @import "common/swiper-custom";
 @import "common/fancybox";
 @import "common/policy";
+@import "common/slider";
 
 html, body {
   position: relative;
@@ -75,4 +76,11 @@ a {
 .svg-sprite {
   position: absolute;
   bottom: 0;
+}
+
+.hr--wide {
+  position: relative;
+  width: 2600px;
+  left: 50%;
+  transform: translateX(-50%);
 }

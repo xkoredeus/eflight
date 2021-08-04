@@ -1,0 +1,75 @@
+{{!-- This is the base layout for your project, and will be used on every page. --}}
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    {{!— Required meta tags --}}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#4B77E4">
+    <link rel="shortcut icon" href="{{root}}assets/img/favicon.ico" type="image/x-icon">
+    <title>New Project</title>
+    <link rel="stylesheet" href="{{root}}assets/css/app.css">
+</head>
+
+<body>
+    {{!-- Pages you create in the src/pages/ folder are inserted here when the flattened page is created. --}}
+
+    <main role="main" class="layout layout--inner">
+        {{> preloader}}
+        <header class="header">
+            {{> header__in}}
+        </header>
+        <div class="layout__in">
+            <section class="section__wrapper">
+                <div class="section__inner section--borders">
+                    <div class="section__in section--padding pt-0">
+                        <div class="container container--padding">
+                            {{> crumbs}}
+                            <div class="row mb-4 mb-xl-5">
+                                <div class="col-xl-10 offset-xl-1">
+                                    <div class="section__title section__title--h2 mb-3 mb-md-4 mb-xl-5">Сравнение товаров</div>
+                                    <div class="d-flex justify-content-end">
+                                        <button class="mt-3 mt-xl-4 d-flex align-items-center stroke-none link-back order-1 order-md-2">
+                                            <svg width="22" height="22">
+                                                <use xlink:href="#cross-circled"></use>
+                                            </svg>
+                                            <span class="ml-2">Очистить список</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="mb-4 mb-xl-5 hr--wide">
+                            <div class="compare__grid">
+                                <div class="compare__grid-item font-mBold">Технические характеристики</div>
+                                <div class="compare__grid-item">Маркировка взрывозащиты</div>
+                                <div class="compare__grid-item">Индекс Цветопередачи (Ra)</div>
+                                <div class="compare__grid-item">Класс энергопотребления по CELMA</div>
+                                <div class="compare__grid-item">Коэффициент мощности, cos ϕ</div>
+                                <div class="compare__grid-item">Напряжение питания, В</div>
+                                <div class="compare__grid-item">Степень защиты, IP</div>
+                                <div class="compare__grid-item">Пульсация светового потока (%)</div>
+                                <div class="compare__grid-item">Температура эксплуатации</div>
+                                <div class="compare__grid-item">Цветовая температура (K)</div>
+                                <div class="compare__grid-item">Тип</div>
+                                <div class="compare__grid-item">Мощность, Вт</div>
+                                <div class="compare__grid-item">Световой поток, лм</div>
+                                <div class="compare__grid-item">Энергетическая эффективность, лм/Вт</div>
+                                <div class="compare__grid-item">Длина (l), мм</div>
+                                <div class="compare__grid-item">Ширина (b), мм</div>
+                                <div class="compare__grid-item">Высота (h), мм</div>
+                                <div class="compare__grid-item">Масса, кг</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {{> footer}}
+        </div>
+        {{> svg}}
+        {{> popups}}
+    </main>
+    <script src="{{root}}assets/js/app.js"></script>
+</body>
+</html>

@@ -77,4 +77,10 @@ button {
       color: $dark;
     }
   }
+
+  &.w-sm-100 {
+    @include r(540) {
+      width: 100%;
+    }
+  }
 }

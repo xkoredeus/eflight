@@ -1,0 +1,37 @@
+---
+layout: inner
+---
+<div class="section__title section__title--h2 mb-3 mb-md-4 mb-xl-5">Поиск</div>
+
+<form class="search-form mb-3 mb-md-4">
+    <div class="search-form__icon">
+        <svg width="23" height="23">
+            <use xlink:href="#loupe"></use>
+        </svg>
+    </div>
+    <input class="search-form__input" type="text" placeholder="Напишите наименование товара или его артикул" value="EL-Led">
+    <button class="search-form__submit" type="submit">
+        <svg width="23" height="23">
+            <use xlink:href="#loupe"></use>
+        </svg>
+    </button>
+</form>
+<div>Найдено: 63</div>
+
+<hr class="my-3 my-md-4">
+
+<div class="items-grid items-grid--wide">
+    {{> item}}
+    {{> item}}
+    {{> item}}
+    {{> item}}
+    {{> item}}
+    {{> item}}
+    {{> item}}
+    {{> item}}
+    {{> item}}
+    {{> item}}
+</div>
+<hr class="my-3 my-md-4">
+
+{{> pagination}}

@@ -1,4 +1,15 @@
 .filter {
+  position: relative;
+  @include r(1200) {
+    background-color: $white;
+    padding: 30px;
+    margin-top: 24px;
+    width: 370px;
+  }
+
+  @include r(425) {
+    width: 100%;
+  }
   &__title {
     font-family: $mBold;
     font-size: 0.8rem;
@@ -30,12 +41,20 @@
     }
   }
   &__dropdown {
-    margin-top: 15px;
+    margin-top: 25px;
     padding-left: 1px;
+
+    @include r(768) {
+      margin-top: 15px;
+    }
   }
   &__item {
     &:not(:last-child) {
-      margin-bottom: 30px;
+      margin-bottom: 40px;
+
+      @include r(768) {
+        margin-bottom: 30px;
+      }
     }
 
     &--hidden {
@@ -56,5 +75,44 @@
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 5px;
     margin-top: 30px;
+  }
+
+  &__slider {
+    &-values {
+      font-size: 0.8rem;
+      color: #7B7B7B;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-3px);
+  }
+    &-value {
+      position: relative;
+      &::before {
+        position: absolute;
+        content: '';
+        width: 1px;
+        height: 8px;
+        background-color: #7B7B7B;
+        bottom: calc(100% + 3px);
+      }
+
+      &:first-child {
+        &::before {
+          left: 0;
+        }
+      }
+
+      &:last-child {
+        &::before {
+          right: 0;
+        }
+      }
+    }
+  }
+
+  &__toggle-button {
+    @include r(512) {
+      width: 100%;
+    }
   }
 }

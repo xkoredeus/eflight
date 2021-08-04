@@ -3,24 +3,32 @@
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 30px;
 
+  @include r(768) {
+    grid-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include r(550) {
+    grid-template-columns: 1fr;
+  }
+
   &--wide {
     grid-template-columns: repeat(5, 1fr);
 
-    @include r(972) {
+    @include r(1200) {
       grid-template-columns: repeat(4, 1fr);
     }
 
-    @include r(768) {
+    @include r(972) {
       grid-template-columns: repeat(3, 1fr);
     }
 
-    @include r(600) {
+    @include r(768) {
       grid-template-columns: repeat(2, 1fr);
-      grid-gap: 20px;
     }
 
-    @include r(490) {
-      grid-template-columns: repeat(1, 1fr);
+    @include r(550) {
+      grid-template-columns: 1fr;
     }
   }
 }
@@ -29,6 +37,12 @@
   position: relative;
   display: grid;
   grid-row-gap: 15px;
+
+  @include r(1200) {
+    padding: 15px;
+    background-color: $white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
 
   &::before {
     position: absolute;
@@ -39,10 +53,12 @@
     top: -10px;
     background-color: $white;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-    @include ease;
     opacity: 0;
     visibility: hidden;
     transform: translateY(-40px);
+    @include r(1200) {
+      display: none;
+    }
   }
 
   &:hover {
@@ -51,6 +67,12 @@
       opacity: 1;
       visibility: visible;
       transform: translateY(0);
+    }
+
+    .item__button {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
     }
   }
 
@@ -72,15 +94,26 @@
   &__picture {
     max-width: 70%;
     max-height: 70%;
+
+    @include r(768) {
+      max-width: unset;
+      max-height: 180px;
+    }
     &-wrapper {
       min-height: 240px;
       @include flex-center;
+      overflow: hidden;
+      margin-bottom: 15px;
 
       @include r(972) {
         min-height: 180px;
         max-height: 180px;
       }
     }
+  }
+
+  &__list {
+    margin-bottom: 10px;
   }
 
   &__info {
@@ -101,19 +134,20 @@
   }
 
   &__button {
-    position: absolute;
     width: 100%;
-    bottom: -60px;
     left: 0;
     right: 0;
-  }
+    padding-left: 0;
+    padding-right: 0;
 
-  //&.animate-in {
-  //  animation: zIndex 1s linear backwards;
-  //}
+    @include rmin(1200) {
+      position: absolute;
+      bottom: -60px;
+      transform: translateY(-5px);
+      opacity: 0;
+      visibility: hidden;
+    }
 
-  &.animate-out {
-    animation: zIndex 1s linear backwards;
   }
 }
 

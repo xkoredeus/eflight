@@ -29,3 +29,15 @@
     }
   }
 }
+
+.stroke-none {
+  svg {
+    stroke: none !important;
+  }
+
+  &:hover {
+    svg {
+      //stroke: ;
+    }
+  }
+}

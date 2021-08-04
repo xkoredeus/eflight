@@ -109,11 +109,6 @@ gulp.task('home', function () {
     return gulp.src([
         'src/assets/js/home.js'
     ])
-        // .pipe(sourcemaps.init())
-        //If concatenating more than one JS file
-        //     .pipe(concat('app.js'))
-        // .pipe(sourcemaps.write('./'))
-        // .pipe(minify())
         .pipe(gulp.dest('dist/assets/js/'))
         .pipe(browserSync.stream());
 });
@@ -122,11 +117,14 @@ gulp.task('map', function () {
     return gulp.src([
         'src/assets/js/map.js'
     ])
-        // .pipe(sourcemaps.init())
-        //If concatenating more than one JS file
-        //     .pipe(concat('app.js'))
-        // .pipe(sourcemaps.write('./'))
-        // .pipe(minify())
+        .pipe(gulp.dest('dist/assets/js/'))
+        .pipe(browserSync.stream());
+});
+
+gulp.task('filter', function () {
+    return gulp.src([
+        'src/assets/js/filter.js'
+    ])
         .pipe(gulp.dest('dist/assets/js/'))
         .pipe(browserSync.stream());
 });
@@ -140,10 +138,10 @@ gulp.task('clean:dist', function () {
 
 // ------------ Build Sequence -------------
 // Simply run 'gulp' in terminal to run local server and watch for changes
-gulp.task('default', ['clean:dist', 'font', 'scripts', 'map', 'home', 'images', 'compile-html', 'resetPages', 'watch']);
+gulp.task('default', ['clean:dist', 'font', 'scripts', 'map', 'filter', 'home', 'images', 'compile-html', 'resetPages', 'watch']);
 
 // Creates production ready assets in dist folder
 gulp.task('build', function () {
     console.log('Building production ready assets');
-    runSequence('clean:dist', 'sass', ['scripts', 'map', 'home', 'images', 'font', 'compile-html'])
+    runSequence('clean:dist', 'sass', ['scripts', 'map', 'filter', 'home', 'images', 'font', 'compile-html'])
 });

@@ -1,0 +1,60 @@
+.filter {
+  &__title {
+    font-family: $mBold;
+    font-size: 0.8rem;
+    color: #7B7B7B;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+
+    span {
+      margin-right: 15px;
+      @include ease;
+    }
+
+    svg {
+      fill: none;
+      margin-bottom: 5px;
+      @include ease;
+      stroke: #7B7B7B;
+      transform: scaleY(1);
+    }
+
+    &:hover {
+      color: $blue;
+
+      svg {
+        stroke: $blue;
+      }
+    }
+  }
+  &__dropdown {
+    margin-top: 15px;
+    padding-left: 1px;
+  }
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+
+    &--hidden {
+      svg {
+        transform: scaleY(-1);
+      }
+    }
+  }
+
+  &__list {
+    .checkbox:not(:last-child) {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 5px;
+    margin-top: 30px;
+  }
+}

@@ -1,12 +1,24 @@
 @import "includes/fancybox/jquery.fancybox.min";
 @import "includes/swiper/swiper.min";
 @import "includes/bs-grid/grid";
+@import "includes/material/material-components.min";
 @import "includes/base";
 
 @import "components/header";
 @import "components/footer";
 @import "components/burger";
 @import "components/menu";
+@import "components/crumbs";
+@import "components/pagination";
+@import "components/favorites";
+@import "components/item";
+@import "components/popups";
 
 @import "pages/home";
-@import "pages/feedback";
+@import "pages/search";
+@import "pages/contacts";
+@import "pages/card";
+@import "pages/service-page";
+@import "pages/unknown";
+@import "pages/directories";
+@import "pages/catalog";

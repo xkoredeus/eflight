@@ -15,14 +15,14 @@
     grid-row-gap: 5px;
     max-width: 255px;
 
-    @include r(1670) {
+    @include r(1572) {
       grid-template-rows: 23px auto;
     }
 
     &-icon {
       grid-row: 1/3;
 
-      @include r(1670) {
+      @include r(1572) {
         width: 47px;
         height: 47px;
       }
@@ -34,7 +34,7 @@
       line-height: .9;
       grid-column: 2/3;
 
-      @include r(1670) {
+      @include r(1572) {
         font-size: 28px;
       }
     }
@@ -45,7 +45,7 @@
       font-size: 9px;
       grid-column: 2/3;
 
-      @include r(1670) {
+      @include r(1572) {
         font-size: 7px;
       }
     }

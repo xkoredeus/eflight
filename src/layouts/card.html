@@ -1,0 +1,453 @@
+{{!-- This is the base layout for your project, and will be used on every page. --}}
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    {{!— Required meta tags --}}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#4B77E4">
+    <link rel="shortcut icon" href="{{root}}assets/img/favicon.ico" type="image/x-icon">
+    <title>New Project</title>
+    <link rel="stylesheet" href="{{root}}assets/css/app.css">
+</head>
+
+<body>
+    {{!-- Pages you create in the src/pages/ folder are inserted here when the flattened page is created. --}}
+
+    <main role="main" class="layout layout--inner">
+        {{> preloader}}
+        <header class="header">
+            {{> header__in}}
+        </header>
+        <div class="layout__in">
+            <section class="section__wrapper">
+                <div class="card section__inner section--borders">
+                    <div class="section__in">
+                        <div class="container container--padding">
+                            {{> crumbs}}
+                            <div class="row">
+                                <div class="col-12 card__top">
+                                    <div class="row">
+                                        <div class="col-xl-6 col-md-5">
+                                            <div class="card-slider__top js-card-top-slider swiper-container">
+                                                <div class="swiper-wrapper">
+                                                    <div class="swiper-slide">
+                                                        <div class="card-slider__picture-wrapper">
+                                                            <img class="card-slider__picture" src="{{root}}assets/img/card/card-picture.jpg" alt="Продукт">
+                                                        </div>
+                                                    </div>
+                                                    <div class="swiper-slide">
+                                                        <div class="card-slider__picture-wrapper">
+                                                            <img class="card-slider__picture" src="{{root}}assets/img/card/card-picture.jpg" alt="Продукт">
+                                                        </div>
+                                                    </div>
+                                                    <div class="swiper-slide">
+                                                        <div class="card-slider__picture-wrapper">
+                                                            <img class="card-slider__picture" src="{{root}}assets/img/card/card-picture.jpg" alt="Продукт">
+                                                        </div>
+                                                    </div>
+                                                    <div class="swiper-slide">
+                                                        <div class="card-slider__picture-wrapper">
+                                                            <img class="card-slider__picture" src="{{root}}assets/img/card/card-picture.jpg" alt="Продукт">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-slider__bottom-wrapper">
+                                                <div class="card-slider__bottom js-card-bottom-slider swiper-container">
+                                                    <div class="swiper-wrapper">
+                                                        <div class="swiper-slide">
+                                                            <div class="card-slider__picture-wrapper">
+                                                                <img class="card-slider__picture" src="{{root}}assets/img/card/card-picture.jpg" alt="Продукт">
+                                                            </div>
+                                                        </div>
+                                                        <div class="swiper-slide">
+                                                            <div class="card-slider__picture-wrapper">
+                                                                <img class="card-slider__picture" src="{{root}}assets/img/card/card-picture.jpg" alt="Продукт">
+                                                            </div>
+                                                        </div>
+                                                        <div class="swiper-slide">
+                                                            <div class="card-slider__picture-wrapper">
+                                                                <img class="card-slider__picture" src="{{root}}assets/img/card/card-picture.jpg" alt="Продукт">
+                                                            </div>
+                                                        </div>
+                                                        <div class="swiper-slide">
+                                                            <div class="card-slider__picture-wrapper">
+                                                                <img class="card-slider__picture" src="{{root}}assets/img/card/card-picture.jpg" alt="Продукт">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-slider__navigation">
+                                                    <button class="card-slider__navigation-button swiper-button-prev js-card-slider-prev">
+                                                        <svg width="42" height="16" >
+                                                            <use xlink:href="#arrow-left"></use>
+                                                        </svg>
+                                                    </button>
+                                                    <button class="card-slider__navigation-button swiper-button-next js-card-slider-next">
+                                                        <svg width="42" height="16" >
+                                                            <use xlink:href="#arrow-right"></use>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6 col-md-7 card__info-wrapper mt-4 mt-xl-0">
+                                            <div class="d-flex align-items-md-center align-items-start">
+                                                <button class="favorites js-favorites d-flex justify-content-center pl-0 mr-3">
+                                                    {{> fav-icon}}
+                                                    <span class="ml-2">В избранное</span>
+                                                </button>
+                                                <a class="card__compare" href="#">
+                                                    <svg width="24" height="20">
+                                                        <use xlink:href="#compare"></use>
+                                                    </svg>
+                                                    <span class="ml-2">Сравнить</span>
+                                                </a>
+                                            </div>
+                                            <hr class="my-3 my-md-4">
+                                            <div class="card__title section__title section__title--h2 mb-3 mb-md-4 md-xl-5">
+                                                <span class="color-blue">EL-LED</span> INDUSTRY
+                                                <span class="item__model fontLight">M3 / M3.3</span>
+                                            </div>
+                                            <div class="card__info mb-3 mb-md-4 md-xl-5">
+                                                <div class="card__info-row">
+                                                    <div>Индекс Цветопередачи (Ra)</div>
+                                                    <div>>80</div>
+                                                </div>
+                                                <div class="card__info-row">
+                                                    <div>Класс энергопотребления по CELMA</div>
+                                                    <div>A</div>
+                                                </div>
+                                                <div class="card__info-row">
+                                                    <div>Коэффициент мощности, cos ϕ</div>
+                                                    <div>0,9</div>
+                                                </div>
+                                                <div class="card__info-row">
+                                                    <div>Напряжение питания, В</div>
+                                                    <div>170-264</div>
+                                                </div>
+                                                <div class="card__info-row">
+                                                    <div>Степень защиты, IP</div>
+                                                    <div>40</div>
+                                                </div>
+                                                <div class="card__info-row">
+                                                    <div>Пульсация светового потока (%)</div>
+                                                    <div><1%</div>
+                                                </div>
+                                                <div class="card__info-row">
+                                                    <div>Температура эксплуатации</div>
+                                                    <div>-40...+40</div>
+                                                </div>
+                                                <div class="card__info-row">
+                                                    <div>Цветовая температура (K)</div>
+                                                    <div>4000/5000</div>
+                                                </div>
+                                            </div>
+                                            <div class="card__icons d-flex flex-wrap">
+                                                <svg class="card__icon">
+                                                    <use xlink:href="#card-icon-1"></use>
+                                                </svg>
+                                                <svg class="card__icon">
+                                                    <use xlink:href="#card-icon-2"></use>
+                                                </svg>
+                                                <svg class="card__icon">
+                                                    <use xlink:href="#card-icon-3"></use>
+                                                </svg>
+                                                <svg class="card__icon">
+                                                    <use xlink:href="#card-icon-4"></use>
+                                                </svg>
+                                                <svg class="card__icon">
+                                                    <use xlink:href="#card-icon-5"></use>
+                                                </svg>
+                                                <svg class="card__icon">
+                                                    <use xlink:href="#card-icon-6"></use>
+                                                </svg>
+                                                <svg class="card__icon">
+                                                    <use xlink:href="#card-icon-7"></use>
+                                                </svg>
+                                                <svg class="card__icon">
+                                                    <use xlink:href="#card-icon-8"></use>
+                                                </svg>
+                                            </div>
+                                            <div class="card__icons d-flex flex-wrap mb-3 mb-md-4 md-xl-5">
+                                                <svg class="card__icon">
+                                                    <use xlink:href="#card-blue-icon-1"></use>
+                                                </svg>
+                                                <svg class="card__icon">
+                                                    <use xlink:href="#card-blue-icon-2"></use>
+                                                </svg>
+                                                <svg class="card__icon">
+                                                    <use xlink:href="#card-blue-icon-3"></use>
+                                                </svg>
+                                                <svg class="card__icon">
+                                                    <use xlink:href="#card-blue-icon-4"></use>
+                                                </svg>
+                                                <svg class="card__icon">
+                                                    <use xlink:href="#card-blue-icon-5"></use>
+                                                </svg>
+                                                <svg class="card__icon">
+                                                    <use xlink:href="#card-blue-icon-6"></use>
+                                                </svg>
+                                                <svg class="card__icon">
+                                                    <use xlink:href="#card-blue-icon-7"></use>
+                                                </svg>
+                                            </div>
+                                            <img class="img-responsive" src="{{root}}assets/img/card/card-scheme.jpg" alt="Схема">
+                                            <div class="d-flex flex-column flex-md-row">
+                                                <button class="button button--outlined mt-3 mt-md-4 mt-xl-5 mb-2 mb-md-0 mr-md-3" data-fancybox data-src="#popup--question">Задать вопрос</button>
+                                                <button class="button mt-1 mt-md-4 mt-xl-5 mb-2 mb-md-0 mr-md-3" data-fancybox data-src="#popup--price">Узнать стоимость</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-10 offset-xl-1">
+                                    <div class="tabs">
+                                        <div class="tabs__list">
+                                            <div class="tabs__list-item">Технические характеристики</div>
+                                            <div class="tabs__list-item">Описание</div>
+                                            <div class="tabs__list-item">КСС</div>
+                                            <div class="tabs__list-item">Скачать </div>
+                                        </div>
+                                        <div class="tabs__content">
+                                            <div class="tabs__content-item">
+                                                <div class="card__table-wrapper">
+                                                    <table class="card__table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Артикул</th>
+                                                                <th>Наименование</th>
+                                                                <th>Мощность. Вт</th>
+                                                                <th>Световой поток</th>
+                                                                <th>Энергетическая эффективность, лм/Вт</th>
+                                                                <th>Длина (l), мм</th>
+                                                                <th>Ширина (b), мм</th>
+                                                                <th>Высота (h), мм</th>
+                                                                <th>Масса</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>050005</td>
+                                                                <td>EL.Led.Retail.Liner.Clear.L60W6.20.27.8.50.IP40.220AC</td>
+                                                                <td>35</td>
+                                                                <td>2700</td>
+                                                                <td>135</td>
+                                                                <td>604</td>
+                                                                <td>55</td>
+                                                                <td>91,5</td>
+                                                                <td>1,4</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>050005</td>
+                                                                <td>EL.Led.Retail.Liner.Clear.L60W6.20.27.8.50.IP40.220AC</td>
+                                                                <td>35</td>
+                                                                <td>2700</td>
+                                                                <td>135</td>
+                                                                <td>604</td>
+                                                                <td>55</td>
+                                                                <td>91,5</td>
+                                                                <td>1,4</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>050005</td>
+                                                                <td>EL.Led.Retail.Liner.Clear.L60W6.20.27.8.50.IP40.220AC</td>
+                                                                <td>35</td>
+                                                                <td>2700</td>
+                                                                <td>135</td>
+                                                                <td>604</td>
+                                                                <td>55</td>
+                                                                <td>91,5</td>
+                                                                <td>1,4</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>050005</td>
+                                                                <td>EL.Led.Retail.Liner.Clear.L60W6.20.27.8.50.IP40.220AC</td>
+                                                                <td>35</td>
+                                                                <td>2700</td>
+                                                                <td>135</td>
+                                                                <td>604</td>
+                                                                <td>55</td>
+                                                                <td>91,5</td>
+                                                                <td>1,4</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>050005</td>
+                                                                <td>EL.Led.Retail.Liner.Clear.L60W6.20.27.8.50.IP40.220AC</td>
+                                                                <td>35</td>
+                                                                <td>2700</td>
+                                                                <td>135</td>
+                                                                <td>604</td>
+                                                                <td>55</td>
+                                                                <td>91,5</td>
+                                                                <td>1,4</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>050005</td>
+                                                                <td>EL.Led.Retail.Liner.Clear.L60W6.20.27.8.50.IP40.220AC</td>
+                                                                <td>35</td>
+                                                                <td>2700</td>
+                                                                <td>135</td>
+                                                                <td>604</td>
+                                                                <td>55</td>
+                                                                <td>91,5</td>
+                                                                <td>1,4</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <div class="tabs__content-item">
+                                                <div class="font-mBold upper mb-2">КОНСТРУКЦИЯ</div>
+                                                <p>Светильник имеет разборный алюминиевый корус, внутри
+                                                    которого установлен драйвер и высокоэффективные
+                                                    светодиодные модули. Для защиты от механических
+                                                    повреждений, загрязнения и равномерного рассеивания
+                                                    света используется опаловый рассеиватель (вторичная
+                                                    оптика). Возможно исполнение в металлическом корпусе.</p>
+
+                                                <div class="font-mBold upper mb-2">ДОПОЛНИТЕЛЬНЫЕ ОПЦИИ</div>
+                                                <p>Возможна комплектация системой управления светом.</p>
+
+                                                <div class="font-mBold upper mb-2">УСТАНОВКА</div>
+                                                <p>Монтаж светильника на предполагаемую поверхность
+                                                    осуществляется с помощью кронштейнов (возможен тросовый
+                                                    подвес). Светильник предназначен для монтажа в линию.
+                                                    Возможно использовать светильник отдельно , в этом случае,
+                                                    он комплектуется торцевыми крышками. Рекомендуемая
+                                                    высота подвеса: 2,5 - 6 м.</p>
+                                            </div>
+                                            <div class="tabs__content-item">
+                                                <div class="card-tabs__grid">
+                                                    <div class="card__curve">
+                                                        <img data-src="{{root}}assets/img/card/kss-1.jpg" data-fancybox src="{{root}}assets/img/card/kss-1.jpg" alt="Карта кривой света">
+                                                    </div>
+                                                    <div class="card__curve">
+                                                        <img data-src="{{root}}assets/img/card/kss-2.jpg" data-fancybox src="{{root}}assets/img/card/kss-2.jpg" alt="Карта кривой света">
+                                                    </div>
+                                                    <div class="card__curve">
+                                                        <img data-src="{{root}}assets/img/card/kss-3.jpg" data-fancybox src="{{root}}assets/img/card/kss-3.jpg" alt="Карта кривой света">
+                                                    </div>
+                                                    <div class="card__curve">
+                                                        <img data-src="{{root}}assets/img/card/kss-4.jpg" data-fancybox src="{{root}}assets/img/card/kss-4.jpg" alt="Карта кривой света">
+                                                    </div>
+                                                    <div class="card__curve">
+                                                        <img data-src="{{root}}assets/img/card/kss-5.jpg" data-fancybox src="{{root}}assets/img/card/kss-5.jpg" alt="Карта кривой света">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tabs__content-item">
+                                                <div class="card-tabs__grid">
+                                                    <a class="document" href="#" target="_blank">
+                                                        <svg>
+                                                            <use xlink:href="#pdf-1"></use>
+                                                        </svg>
+                                                        <span class="document__info">
+                                                            <span class="document__title">Архив IES</span>
+                                                            <span class="document__size">11.75 KB .ZIP</span>
+                                                        </span>
+                                                    </a>
+                                                    <a class="document" href="#" target="_blank">
+                                                        <svg>
+                                                            <use xlink:href="#zip"></use>
+                                                        </svg>
+                                                        <span class="document__info">
+                                                            <span class="document__title">Сертификат СТ-1</span>
+                                                            <span class="document__size">577.42 KB .PDF</span>
+                                                        </span>
+                                                    </a>
+                                                    <a class="document" href="#" target="_blank">
+                                                        <svg>
+                                                            <use xlink:href="#pdf-1"></use>
+                                                        </svg>
+                                                        <span class="document__info">
+                                                            <span class="document__title">Сертификат ТС</span>
+                                                            <span class="document__size">442.69 KB .PDF</span>
+                                                            <span class="document__description">Декларация соответствия ТР ЕАЭС 037/2016</span>
+                                                        </span>
+                                                    </a>
+                                                    <a class="document" href="#" target="_blank">
+                                                        <svg>
+                                                            <use xlink:href="#pdf-1"></use>
+                                                        </svg>
+                                                        <span class="document__info">
+                                                            <span class="document__title">Листовка в PDF</span>
+                                                            <span class="document__size">577.42 KB .PDF</span>
+                                                        </span>
+                                                    </a>
+                                                    <a class="document" href="#" target="_blank">
+                                                        <svg>
+                                                            <use xlink:href="#pdf-1"></use>
+                                                        </svg>
+                                                        <span class="document__info">
+                                                            <span class="document__title">Сертификат ТС</span>
+                                                            <span class="document__size">442.69 KB .PDF</span>
+                                                            <span class="document__description">Декларация о соответствии ТР ТС 04/2011, ТР ТС 020/2011</span>
+                                                        </span>
+                                                    </a>
+                                                    <a class="document" href="#" target="_blank">
+                                                        <svg>
+                                                            <use xlink:href="#pdf-1"></use>
+                                                        </svg>
+                                                        <span class="document__info">
+                                                            <span class="document__title">Страницы каталога</span>
+                                                            <span class="document__size">127.27 KB .PDF</span>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="mt-3 mt-xl-5">
+                        <div class="container container--padding">
+                            <div class="section--padding-small"><div class="row">
+                                <div class="col-xl-10 offset-xl-1">
+                                    <div class="d-flex flex-column flex-md-row justify-content-between align-items-sm-start align-items-md-center mb-3 mb-md-3 mb-xl-4">
+                                        <div class="section__title section__title--h2 mb-3 mb-md-0">Другие товары из этой категории</div>
+                                        <a class="button button--icon button--small-padding" href="#">
+                                            <svg class="button__icon mr-2" width="32" height="38">
+                                                <use xlink:href="#pdf"></use>
+                                            </svg>
+                                            <span>Скачать каталог</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-xl-10 offset-xl-1">
+                                    <div class="items-grid items-grid--wide">
+                                        {{> item}}
+                                        {{> item}}
+                                        {{> item}}
+                                        {{> item}}
+                                        {{> item}}
+                                        {{> item}}
+                                        {{> item}}
+                                        {{> item}}
+                                        {{> item}}
+                                        {{> item}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <button class="section__navigation js-scroll-top">
+                        <span class="mr-2">Вернуться наверх</span>
+                        <svg width="50" height="16">
+                            <use xlink:href="#arrow-right"></use>
+                        </svg>
+                    </button>
+                </div>
+            </section>
+            {{> footer}}
+            {{> popups}}
+        </div>
+        {{> svg}}
+    </main>
+    <script src="{{root}}assets/js/app.js"></script>
+</body>
+</html>

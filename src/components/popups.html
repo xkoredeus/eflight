@@ -1,14 +1,60 @@
+<div id="popup--price" style="display: none">
+    <div class="popup__wrapper">
+        <div class="popup__container">
+            <div class="tac">
+                <div class="popup__title section__title section__title--h3 mb-2 mb-md-2">Узнать стоимость</div>
+                <div class="popup__subtitle mb-2 mb-md-3">Заполните поля и наш оператор савяжется с вами в ближайшее время</div>
+            </div>
+            <form class="popup__fields d-flex flex-column align-items-center">
+                <input type="text" placeholder="ФИО*" required>
+                <input type="tel" placeholder="Телефон*" required>
+                <input type="email" placeholder="E-mail">
+                <button type="submit" class="button">Отправить</button>
+            </form>
+            {{> policy}}
+            <div class="d-flex flex-column align-items-center">
+                <img class="captcha" src="{{root}}assets/img/captcha.jpg" alt="Капча">
+            </div>
+        </div>
+    </div>
+</div>
 <div id="popup--call" style="display: none">
     <div class="popup__wrapper">
         <div class="popup__container">
-            <div class="popup__title section__title">Заполните для оформления заказа</div>
-            <form class="popup__fields">
-                <input type="text" placeholder="Ваше имя">
-                <input type="tel" placeholder="+7 ( ___ ) - ___ - __ - __">
-                <input type="email" placeholder="Ваш e-mail">
-                <input type="text" placeholder="Ваш регион">
-                <button class="button">Оформить</button>
+            <div class="tac">
+                <div class="popup__title section__title section__title--h3 mb-2 mb-md-2">Заказать обратный звонок</div>
+                <div class="popup__subtitle mb-2 mb-md-3">Заполните поля и наш оператор савяжется с вами в ближайшее время</div>
+            </div>
+            <form class="popup__fields d-flex flex-column align-items-center">
+                <input type="text" placeholder="ФИО*" required>
+                <input type="tel" placeholder="Телефон*" required>
+                <input type="email" placeholder="E-mail">
+                <button type="submit" class="button">Отправить</button>
             </form>
+            {{> policy}}
+            <div class="d-flex flex-column align-items-center">
+                <img class="captcha" src="{{root}}assets/img/captcha.jpg" alt="Капча">
+            </div>
+        </div>
+    </div>
+</div>
+<div id="popup--question" style="display: none">
+    <div class="popup__wrapper">
+        <div class="popup__container">
+            <div class="tac">
+                <div class="popup__title section__title section__title--h3 mb-2 mb-md-2">Задать вопрос</div>
+                <div class="popup__subtitle mb-2 mb-md-3">Заполните поля и наш оператор савяжется с вами в ближайшее время</div>
+            </div>
+            <form class="popup__fields d-flex flex-column align-items-center">
+                <input type="text" placeholder="ФИО*" required>
+                <input type="tel" placeholder="Телефон*" required>
+                <textarea placeholder="Ваш вопрос" rows="3"></textarea>
+                <button type="submit" class="button">Отправить</button>
+            </form>
+            {{> policy}}
+            <div class="d-flex flex-column align-items-center">
+                <img class="captcha" src="{{root}}assets/img/captcha.jpg" alt="Капча">
+            </div>
         </div>
     </div>
 </div>

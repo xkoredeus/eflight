@@ -43,4 +43,38 @@ button {
   &--small-padding {
     padding: 16px 25px;
   }
+
+  &--dark {
+    color: $dark;
+
+    svg {
+      stroke: $dark;
+    }
+
+    &:hover {
+      color: $blue;
+
+      svg {
+        stroke: $blue;
+      }
+    }
+  }
+
+  &--no-padding {
+    padding: 0;
+  }
+
+  &--transparent {
+    background-color: $tr;
+    &:hover {
+      background-color: $tr;
+    }
+  }
+
+  &--blue {
+    color: $blue;
+    &:hover {
+      color: $dark;
+    }
+  }
 }

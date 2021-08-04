@@ -13,16 +13,6 @@
     //min-height: 517px;
   }
 
-  &::before {
-    position: absolute;
-    content: '';
-    left: 0;
-    top: 30vh;
-    height: 18px;
-    width: 10px;
-    background-color: $darkGray;
-  }
-
 
   &::after {
     position: absolute;
@@ -50,6 +40,7 @@
 
   &__navigation {
     position: absolute;
+    color: $darkGray;
     left: 0;
     bottom: 10vh;
     padding-left: 15px;
@@ -118,8 +109,8 @@
     position: relative;
     height: calc(100vh - 145px);
     display: grid;
-    grid-template-columns: 1fr 0.6fr;
-    grid-template-rows: 0.6fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     width: calc(100% + 25px);
     left: -25px;
 
@@ -135,8 +126,8 @@
     }
 
     @include r(1200) {
-      grid-template-columns: 1fr 0.8fr;
-      grid-template-rows: 0.8fr 1fr;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
     }
 
     @include r(768) {
@@ -152,7 +143,7 @@
   &__link {
     position: relative;
     overflow: hidden;
-    //border: 1px solid $darkGray;
+    z-index: 1;
 
     @include r(768) {
       color: $white !important;

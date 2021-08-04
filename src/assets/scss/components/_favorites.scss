@@ -1,0 +1,39 @@
+.favorites {
+  span {
+    @include ease;
+  }
+
+  &:hover {
+    span {
+      color: $blue;
+    }
+  }
+
+  svg {
+    @include r(768) {
+      max-width: 15px;
+      max-height: 17px;
+    }
+  }
+
+  .fav-icon {
+    &__in {
+      fill: $tr;
+      transform: scaleY(0);
+      @include ease;
+    }
+    &__outer {
+      fill: $blue;
+    }
+  }
+
+  &.active {
+    .fav-icon {
+      &__in {
+        fill: $blue;
+        stroke: $blue;
+        transform: scaleY(1);
+      }
+    }
+  }
+}

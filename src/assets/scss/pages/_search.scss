@@ -1,0 +1,54 @@
+.search {
+  &-form {
+    position: relative;
+    width: 100%;
+
+    &__icon {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+
+      @include r(700) {
+        display: none;
+      }
+
+      svg {
+        @include r(1572) {
+          max-height: 18px;
+        }
+      }
+    }
+
+    &__input {
+      width: 100%;
+      padding: 18px 25px 18px 55px;
+      border: 1px solid $darkGray;
+
+      @include r(700) {
+        padding: 12px 15px;
+        border-bottom: 1px solid $darkGray;
+        background-color: $white;
+      }
+    }
+
+    &__submit {
+      display: none;
+
+      @include r(700) {
+        position: absolute;
+        right: 5px;
+        height: 40px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: block;
+        background-color: $white;
+
+        svg {
+          max-width: 20px;
+          max-height: 20px;
+        }
+      }
+    }
+  }
+}

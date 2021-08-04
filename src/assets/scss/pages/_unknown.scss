@@ -1,0 +1,20 @@
+.unknown {
+  &__text {
+    font-size: 1.2rem;
+    margin-top: 70px;
+
+    @include r(600) {
+      margin-top: 50px;
+      font-size: 1rem;
+    }
+  }
+
+  &__icon {
+    max-width: 100%;
+    height: auto;
+
+    &-wrapper {
+      position: relative;
+    }
+  }
+}

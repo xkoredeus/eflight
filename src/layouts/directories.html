@@ -1,0 +1,192 @@
+{{!-- This is the base layout for your project, and will be used on every page. --}}
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    {{!— Required meta tags --}}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#4B77E4">
+    <link rel="shortcut icon" href="{{root}}assets/img/favicon.ico" type="image/x-icon">
+    <title>New Project</title>
+    <link rel="stylesheet" href="{{root}}assets/css/app.css">
+</head>
+
+<body>
+    {{!-- Pages you create in the src/pages/ folder are inserted here when the flattened page is created. --}}
+
+    <main role="main" class="layout layout--inner">
+        {{> preloader}}
+        <header class="header">
+            {{> header__in}}
+        </header>
+        <div class="layout__in">
+            <section class="section__wrapper">
+                <div class="section__inner section--borders">
+                    <div class="section__in">
+                        <div class="container container--padding">
+                            {{> crumbs}}
+                            <div class="row">
+                                <div class="col-xl-10 offset-xl-1">
+                                    <div class="section__title section__title--h2 mb-3 mb-md-4 mb-xl-5">Каталог</div>
+                                    <div class="row">
+                                        <div class="col-xl-6 mb-4 mb-md-4 mb-xl-5">
+                                            <a class="directory" href="#">
+                                                <div class="directory__picture-wrapper">
+                                                    <img class="directory__picture" src="{{root}}assets/img/directories/directory-1.jpg" alt="Директория">
+                                                </div>
+                                                <div class="directory__info">
+                                                    <div class="directory__title section__title section__title--h3">
+                                                        Промышленное освещение
+                                                    </div>
+                                                    <div class="button button--icon button--transparent button--dark button--no-padding d-flex align-items-center">
+                                                        <span class="mr-3 d-none d-md-inline">Перейти</span>
+                                                        <svg width="33" height="10">
+                                                            <use xlink:href="#arrow-right"></use>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-xl-6 mb-4 mb-md-4 mb-xl-5">
+                                            <a class="directory" href="#">
+                                                <div class="directory__picture-wrapper">
+                                                    <img class="directory__picture" src="{{root}}assets/img/directories/directory-2.jpg" alt="Директория">
+                                                </div>
+                                                <div class="directory__info">
+                                                    <div class="directory__title section__title section__title--h3">
+                                                        Взрывозащищенное освещение
+                                                    </div>
+                                                    <div class="button button--icon button--transparent button--dark button--no-padding d-flex align-items-center">
+                                                        <span class="mr-3 d-none d-md-inline">Перейти</span>
+                                                        <svg width="33" height="10">
+                                                            <use xlink:href="#arrow-right"></use>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-xl-6 mb-4 mb-md-4 mb-xl-5">
+                                            <a class="directory" href="#">
+                                                <div class="directory__picture-wrapper">
+                                                    <img class="directory__picture" src="{{root}}assets/img/directories/directory-3.jpg" alt="Директория">
+                                                </div>
+                                                <div class="directory__info">
+                                                    <div class="directory__title section__title section__title--h3">
+                                                        Наружное освещение
+                                                    </div>
+                                                    <div class="button button--icon button--transparent button--dark button--no-padding d-flex align-items-center">
+                                                        <span class="mr-3 d-none d-md-inline">Перейти</span>
+                                                        <svg width="33" height="10">
+                                                            <use xlink:href="#arrow-right"></use>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-xl-6 mb-4 mb-md-4 mb-xl-5">
+                                            <a class="directory" href="#">
+                                                <div class="directory__picture-wrapper">
+                                                    <img class="directory__picture" src="{{root}}assets/img/directories/directory-4.jpg" alt="Директория">
+                                                </div>
+                                                <div class="directory__info">
+                                                    <div class="directory__title section__title section__title--h3">
+                                                        Торговое освещение
+                                                    </div>
+                                                    <div class="button button--icon button--transparent button--dark button--no-padding d-flex align-items-center">
+                                                        <span class="mr-3 d-none d-md-inline">Перейти</span>
+                                                        <svg width="33" height="10">
+                                                            <use xlink:href="#arrow-right"></use>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-xl-6 mb-4 mb-md-4 mb-xl-5">
+                                            <a class="directory" href="#">
+                                                <div class="directory__picture-wrapper">
+                                                    <img class="directory__picture" src="{{root}}assets/img/directories/directory-5.jpg" alt="Директория">
+                                                </div>
+                                                <div class="directory__info">
+                                                    <div class="directory__title section__title section__title--h3">
+                                                        Специальное освещение
+                                                    </div>
+                                                    <div class="button button--icon button--transparent button--dark button--no-padding d-flex align-items-center">
+                                                        <span class="mr-3 d-none d-md-inline">Перейти</span>
+                                                        <svg width="33" height="10">
+                                                            <use xlink:href="#arrow-right"></use>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-xl-6 mb-4 mb-md-4 mb-xl-5">
+                                            <a class="directory" href="#">
+                                                <div class="directory__picture-wrapper">
+                                                    <img class="directory__picture" src="{{root}}assets/img/directories/directory-6.jpg" alt="Директория">
+                                                </div>
+                                                <div class="directory__info">
+                                                    <div class="directory__title section__title section__title--h3">
+                                                        Освещение общего применения
+                                                    </div>
+                                                    <div class="button button--icon button--transparent button--dark button--no-padding d-flex align-items-center">
+                                                        <span class="mr-3 d-none d-md-inline">Перейти</span>
+                                                        <svg width="33" height="10">
+                                                            <use xlink:href="#arrow-right"></use>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-xl-6 mb-4 mb-md-4 mb-xl-5">
+                                            <a class="directory" href="#">
+                                                <div class="directory__picture-wrapper">
+                                                    <img class="directory__picture" src="{{root}}assets/img/directories/directory-7.jpg" alt="Директория">
+                                                </div>
+                                                <div class="directory__info">
+                                                    <div class="directory__title section__title section__title--h3">
+                                                        Освещение для ЖКХ
+                                                    </div>
+                                                    <div class="button button--icon button--transparent button--dark button--no-padding d-flex align-items-center">
+                                                        <span class="mr-3 d-none d-md-inline">Перейти</span>
+                                                        <svg width="33" height="10">
+                                                            <use xlink:href="#arrow-right"></use>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-xl-6 mb-4 mb-md-4 mb-xl-5">
+                                            <a class="directory" href="#">
+                                                <div class="directory__picture-wrapper">
+                                                    <img class="directory__picture" src="{{root}}assets/img/directories/directory-8.jpg" alt="Директория">
+                                                </div>
+                                                <div class="directory__info">
+                                                    <div class="directory__title section__title section__title--h3">
+                                                        Складское освещение
+                                                    </div>
+                                                    <div class="button button--icon button--transparent button--dark button--no-padding d-flex align-items-center">
+                                                        <span class="mr-3 d-none d-md-inline">Перейти</span>
+                                                        <svg width="33" height="10">
+                                                            <use xlink:href="#arrow-right"></use>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {{> footer}}
+        </div>
+        {{> svg}}
+        {{> popups}}
+    </main>
+    <script src="{{root}}assets/js/app.js"></script>
+</body>
+</html>

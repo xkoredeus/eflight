@@ -1,0 +1,89 @@
+.form {
+  &__checkbox {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    @include r(1200) {
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+    &-input {
+      position: absolute;
+      opacity: 0;
+      z-index: 1;
+      &:checked ~ .form__checkbox-gal {
+        svg {
+          stroke: #4285F4;
+
+          path {
+            stroke-dashoffset: 60;
+            transition: all .3s linear;
+          }
+
+          polyline {
+            stroke-dashoffset: 42;
+            transition: all .2s linear;
+            transition-delay: .15s;
+          }
+        }
+      }
+    }
+    &-gal {
+      position: relative;
+      background-color: $tr;
+      border: 3px solid $tr;
+      width: 20px;
+      min-width: 20px;
+      height: 20px;
+      margin-right: 10px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include ease-in-out;
+      svg {
+        position: relative;
+        z-index: 1;
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke: #C8CCD4;
+        stroke-width: 1.5;
+        transform: translate3d(0, 0, 0);
+        transition: all .2s ease;
+
+        path {
+          stroke-dasharray: 60;
+          stroke-dashoffset: 0;
+        }
+
+        polyline {
+          stroke-dasharray: 22;
+          stroke-dashoffset: 66;
+        }
+      }
+      &:hover {
+        background-color: $gray;
+        svg {
+          stroke: $blue;
+        }
+      }
+    }
+    &-text {
+      font-family: $mRegular;
+      font-size: 0.7rem;
+      color: #7B7B7B;
+    }
+    &-link {
+      color: $blue;
+      border-bottom: 1px solid $blue;
+      &:hover {
+        color: $blue;
+        border-color: $blue;
+      }
+    }
+  }
+}

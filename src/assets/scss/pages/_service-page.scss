@@ -1,0 +1,204 @@
+.service-page {
+  &__banner {
+    position: relative;
+    color: $white;
+    padding: 35px 25% 35px 40px;
+    background-color: $blue;
+    overflow: hidden;
+
+    @include r(600) {
+      padding: 25px;
+    }
+
+    .section__title {
+      position: relative;
+      z-index: 1;
+    }
+
+    &-info {
+      position: relative;
+      font-size: 0.83rem;
+      z-index: 1;
+      @include r(1200) {
+        text-shadow: 0 1px $darkGray;
+      }
+    }
+
+    &-picture {
+      position: absolute;
+      right: 0;
+      top: 0;
+      max-height: 100%;
+
+      @include r(600) {
+        display: none;
+      }
+    }
+  }
+
+  &__advantages {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-top: 1px solid $darkGray;
+    border-left: 1px solid $darkGray;
+
+    &-wrapper {
+      position: relative;
+
+      &::before {
+        position: absolute;
+        content: '';
+        width: 1px;
+        height: 100%;
+        top: 150px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: $darkGray;
+
+        @include r(1200) {
+          display: none;
+        }
+      }
+
+      &::after {
+        position: absolute;
+        content: '';
+        right: 50%;
+        top: 150px;
+        width: 300px;
+        height: 1px;
+        background-color: $darkGray;
+        transform: rotate(66deg);
+        transform-origin: bottom right;
+
+        @include r(1200) {
+          display: none;
+        }
+      }
+
+      .container {
+        position: relative;
+        z-index: 1;
+      }
+    }
+
+    @include r(768) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__advantage {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    grid-column-gap: 30px;
+    align-items: center;
+    padding: 25px 40px;
+    border-bottom: 1px solid $darkGray;
+    border-right: 1px solid $darkGray;
+
+    @include rmin(1200) {
+      &:nth-child(odd) {
+        border-right: none;
+      }
+    }
+
+
+    @include r(976) {
+      padding: 15px 25px;
+    }
+
+    @include r(768) {
+      font-size: 0.8rem;
+      grid-template-columns: 34px 1fr;
+      grid-column-gap: 15px;
+    }
+
+    @include r(600) {
+      padding: 15px 20px;
+    }
+
+    &-icon {
+      @include flex-center;
+
+      @include r(768) {
+        max-height: 40px;
+      }
+    }
+  }
+
+  &__phone {
+    font-size: 1.8rem;
+    @include r(1200) {
+      font-size: 1.3rem;
+    }
+
+    &-wrapper {
+      margin-left: 70px;
+      transform: translateX(-44px);
+      margin-top: 50px;
+
+      @include r(976) {
+        margin-top: 15px;
+        margin-left: 0;
+        transform: translateX(0);
+      }
+    }
+  }
+
+  &__tasks {
+    position: relative;
+    &::before {
+      position: absolute;
+      content: '';
+      width: 1px;
+      height: 82%;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: $darkGray;
+
+      @include r(1200) {
+        display: none;
+      }
+    }
+  }
+
+  &__task {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    grid-gap: 10px;
+    align-items: center;
+    transform: translateX(-44px);
+
+    @include r(976) {
+      transform: translateX(0);
+      grid-template-columns: 30px 1fr;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 25px;
+
+      @include r(976) {
+        margin-bottom: 15px;
+      }
+    }
+
+    span:first-child {
+      font-family: $mBold;
+      font-size: 2.2222rem;
+      color: $blue;
+      width: 60px;
+      height: 60px;
+      background-color: $gray;
+      @include flex-center;
+
+      @include r(976) {
+        width: 30px;
+      }
+
+      @include r(600) {
+        height: 30px;
+      }
+    }
+  }
+}

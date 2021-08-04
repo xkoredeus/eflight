@@ -4,10 +4,11 @@ select {
   color: $dark;
   font-family: $mRegular, Roboto, sans-serif;
   font-size: 0.9rem;
-  padding: 20px 24px;
+  padding: 0 0 10px;
   border: none;
-  border-bottom: 1px solid $dark;
+  border-bottom: 1px solid #7B7B7B;
   @include ease;
+  outline: none;
 }
 option {
   color: $dark;
@@ -16,20 +17,24 @@ textarea {
   resize: none !important;
   overflow: hidden;
   &::placeholder {
-    color: $dark;
+    color: #7B7B7B;
   }
 }
 input[type="text"]::placeholder,
 input[type="email"]::placeholder,
 input[type="tel"]::placeholder {
-  color: $dark;
+  color: #7B7B7B;
 }
 input:focus,
 textarea:focus,
 input:active,
 textarea:active {
   color: $dark;
-  border-color: $blue;
+  border-color: $darkGray;
+
+  &::placeholder {
+    color: $tr;
+  }
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {

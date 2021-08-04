@@ -1,0 +1,103 @@
+.contacts {
+  &__info-grid {
+    display: grid;
+    grid-row-gap: 19px;
+    padding-left: 40px;
+    border-left: 1px solid #D5D5D5;
+    max-width: 370px;
+
+    @include r(768) {
+      grid-row-gap: 10px;
+      max-width: unset;
+      padding-left: 10px;
+    }
+  }
+  &__info {
+    font-size: 0.85rem;
+    display: grid;
+    grid-template-columns: 25px 1fr;
+    grid-column-gap: 19px;
+    grid-row-gap: 19px;
+    align-items: flex-start;
+
+    @include r(768) {
+      grid-column-gap: 15px;
+      grid-template-columns: 15px 1fr;
+    }
+
+    span {
+      @include ease;
+      margin-top: 2px;
+
+      @include r(768) {
+        margin-top: 4px;
+      }
+    }
+
+    svg {
+      @include ease;
+      fill: $darkGray;
+
+      @include r(768) {
+        max-width: 15px;
+      }
+    }
+  }
+
+  &__map {
+    height: 400px;
+
+    @include r(768) {
+      height: 300px;
+    }
+  }
+}
+
+//.mapboxgl-canvas-container.mapboxgl-interactive, .mapboxgl-ctrl-group button.mapboxgl-ctrl-compass {
+//  cursor: none !important;
+//}
+
+.mapboxgl-ctrl-logo {
+  z-index: -1 !important; // This is 1000 by default
+  position: absolute;
+  bottom: -200px;
+  pointer-events: none;
+}
+
+.balloon {
+  &__content {
+    color: $white;
+    font-size: 0.80rem;
+    text-align: left;
+    text-transform: uppercase;
+    width: 180px;
+    height: 60px;
+    background-color: $blue;
+    padding: 10px;
+    margin-top: 49px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include r(1572) {
+      width: 161px;
+    }
+  }
+
+  &__address {
+    display: flex;
+    flex-direction: column;
+
+    span:last-child {
+      font-size: 0.7rem;
+      color: $white;
+    }
+  }
+
+  &__name {
+    @include rmin(1400) {
+      white-space: nowrap;
+    }
+  }
+}

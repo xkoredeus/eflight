@@ -1,0 +1,38 @@
+
+.popup {
+  &__container {
+    margin-top: 25px;
+    background-color: $white;
+    max-width: 534px;
+    padding: 54px;
+
+    @include r(600) {
+      padding: 30px 25px;
+    }
+  }
+
+  &__subtitle {
+    max-width: 415px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__fields {
+    grid-gap: 15px;
+
+    @include r(600) {
+      grid-gap: 10px;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+    }
+  }
+}
+
+.captcha {
+  max-width: 100%;
+  height: auto;
+}

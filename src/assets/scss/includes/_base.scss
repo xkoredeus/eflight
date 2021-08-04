@@ -12,6 +12,7 @@
 @import "common/links";
 @import "common/swiper-custom";
 @import "common/fancybox";
+@import "common/policy";
 
 html, body {
   position: relative;
@@ -24,7 +25,7 @@ html, body {
   margin: 0;
   max-width: 100%;
 
-  @include r(1670) {
+  @include r(1572) {
     font-size: 16px;
   }
 
@@ -64,10 +65,11 @@ a {
 
 .layout {
   overflow: hidden;
+}
 
-  //&__in {
-  //  @include layoutPaddings;
-  //}
+.img-responsive {
+  max-width: 100%;
+  height: auto;
 }
 
 .svg-sprite {

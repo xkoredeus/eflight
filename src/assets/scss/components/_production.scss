@@ -21,18 +21,11 @@
 
   &-slider {
     &__wrapper {
-      max-height: 500px;
+      max-height: 550px;
 
       .swiper-container {
-        height: 500px !important;
+        height: 550px !important;
       }
-      //.swiper-wrapper {
-      //  height: 250px !important;
-      //}
-
-      //.swiper-slide {
-      //  height: 250px !important;
-      //}
     }
   }
 
@@ -221,6 +214,7 @@
       position: absolute;
       content: '';
       left: -25px;
+      top: 0;
       height: 100%;
       width: 1px;
       background-color: $darkGray;

@@ -1,0 +1,63 @@
+.crumbs {
+  list-style: none;
+  margin: 44px 0 80px;
+  padding: 0;
+
+  @include r(1200) {
+    margin: 20px 0 40px;
+  }
+
+  @include r(768) {
+    margin: 15px 0 20px;
+  }
+
+  li {
+    color: $darkGray;
+    font-size: 0.8rem;
+    display: inline-block;
+
+    @include r(600) {
+      font-size: 0.75rem;
+      margin-bottom: 5px;
+    }
+
+    a {
+      color: $darkGray;
+
+      &:hover {
+        color: $blue;
+      }
+    }
+
+    &:not(:last-child) {
+      position: relative;
+      margin-right: 5px;
+
+      @include r(600) {
+        margin-right: 3px;
+      }
+
+      &::after {
+        content: '';
+        width: 12px;
+        height: 4px;
+        display: inline-block;
+        background-image: url('../img/icon--arrow.svg');
+        margin-left: 5px;
+        @include ct;
+
+        @include r(1400) {
+          margin-bottom: 3px;
+        }
+
+        @include r(600) {
+          margin-left: 3px;
+          margin-bottom: 1px;
+        }
+      }
+    }
+    &:last-child {
+      color: $blue;
+    }
+  }
+}

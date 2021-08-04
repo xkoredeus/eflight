@@ -8,4 +8,24 @@
   &:active {
     color: $blue;
   }
+
+  &-back {
+    svg {
+      stroke: $dark;
+      @include ease;
+      margin-bottom: 3px;
+    }
+    &:hover {
+      svg {
+        stroke: $blue;
+      }
+    }
+  }
+  
+  &--blue {
+    color: $blue;
+    &:hover {
+      color: $darkGray;
+    }
+  }
 }

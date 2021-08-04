@@ -111,6 +111,16 @@
         font-size: 1rem;
       }
     }
+
+    &--h4 {
+      font-size: 1.2rem;
+      @include r(960) {
+        font-size: 1rem;
+      }
+      @include r(600) {
+        font-size: 0.9rem;
+      }
+    }
   }
 
   &__wrapper {
@@ -235,6 +245,68 @@
       }
       &:last-child {
         color: #D4D4D4;
+      }
+    }
+  }
+
+  &__inner {
+    position: relative;
+    min-height: calc(100vh - 145px - 251px);
+
+    @include r(1572) {
+      min-height: calc(100vh - 101px - 251px);
+    }
+
+    @include r(1200) {
+      min-height: calc(100vh - 181px - 251px);
+    }
+
+    @include r(768) {
+      min-height: calc(100vh - 186px - 64px);
+    }
+
+    @include r(700) {
+      min-height: calc(100vh - 146px - 64px);
+    }
+  }
+
+  &__navigation {
+    position: absolute;
+    color: $darkGray;
+    right: 0;
+    bottom: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    transform: rotate(-90deg) translate(100%, 12px);
+    transform-origin: right bottom;
+    display: flex;
+    align-items: center;
+    background-color: $white;
+
+    &:hover {
+      color: $blue;
+
+      svg {
+        stroke: $blue;
+      }
+    }
+
+    @include r(1572) {
+      transform: rotate(-90deg) translate(100%, 9px);
+      font-size: 0.8rem;
+    }
+
+    @include r(1200) {
+      display: none;
+    }
+
+    svg {
+      stroke: $dark;
+      @include ease;
+
+      @include r(1572) {
+        width: 40px;
+        height: 9px;
       }
     }
   }

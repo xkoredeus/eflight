@@ -1,0 +1,245 @@
+{{!-- This is the base layout for your project, and will be used on every page. --}}
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    {{!— Required meta tags --}}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#4B77E4">
+    <link rel="shortcut icon" href="{{root}}assets/img/favicon.ico" type="image/x-icon">
+    <title>New Project</title>
+    <link rel="stylesheet" href="{{root}}assets/css/app.css">
+</head>
+
+<body>
+    {{!-- Pages you create in the src/pages/ folder are inserted here when the flattened page is created. --}}
+
+    <main role="main" class="layout layout--inner">
+        {{> preloader}}
+        <header class="header">
+            {{> header__in}}
+        </header>
+        <div class="layout__in">
+            <section class="section__wrapper">
+                <div class="section__inner section--borders">
+                    <div class="section__in section--padding-small pt-0">
+                        <div class="container container--padding">
+                            {{> crumbs}}
+                            <div class="row">
+                                <div class="col-xl-10 offset-xl-1">
+                                    <div class="section__title section__title--h2 mb-3 mb-md-4 mb-xl-5">Каталог</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-3 offset-xl-1">
+                                    <form class="filter">
+                                        <div class="filter__list">
+                                            <div class="filter__item">
+                                                <div class="filter__title">
+                                                    <span>тип продукции</span>
+                                                    <svg width="15" height="9">
+                                                        <use xlink:href="#chevron-top"></use>
+                                                    </svg>
+                                                </div>
+                                                <div class="filter__dropdown">
+                                                    <div class="d-flex flex-column align-items-start">
+                                                        <label class="checkbox">
+                                                            <input type="checkbox">
+                                                            <span class="checkbox__text">Взрывозащита</span>
+                                                        </label>
+                                                        <label class="checkbox">
+                                                            <input type="checkbox">
+                                                            <span class="checkbox__text">Встраиваемый</span>
+                                                        </label>
+                                                        <label class="checkbox">
+                                                            <input type="checkbox">
+                                                            <span class="checkbox__text">ЖКХ</span>
+                                                        </label>
+                                                        <label class="checkbox">
+                                                            <input type="checkbox">
+                                                            <span class="checkbox__text">Межстеллажный</span>
+                                                        </label>
+
+                                                        <label class="checkbox">
+                                                            <input type="checkbox">
+                                                            <span class="checkbox__text">Низковольтный</span>
+                                                        </label>
+                                                        <label class="checkbox">
+                                                            <input type="checkbox">
+                                                            <span class="checkbox__text">Промышленный</span>
+                                                        </label>
+                                                        <label class="checkbox">
+                                                            <input type="checkbox">
+                                                            <span class="checkbox__text">Садово-парковый</span>
+                                                        </label>
+                                                        <label class="checkbox">
+                                                            <input type="checkbox">
+                                                            <span class="checkbox__text">Складской</span>
+                                                        </label>
+                                                        <label class="checkbox">
+                                                            <input type="checkbox">
+                                                            <span class="checkbox__text">Уличный</span>
+                                                        </label>
+                                                        <label class="checkbox">
+                                                            <input type="checkbox">
+                                                            <span class="checkbox__text">Универсальный</span>
+                                                        </label>
+                                                        <label class="checkbox">
+                                                            <input type="checkbox">
+                                                            <span class="checkbox__text">Фито освещение</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="filter__item">
+                                                <div class="filter__title">
+                                                    <span>Диапазон мощности</span>
+                                                    <svg width="15" height="9">
+                                                        <use xlink:href="#chevron-top"></use>
+                                                    </svg>
+                                                </div>
+                                                <div class="filter__dropdown">
+                                                    <div class="js-power-slider mdc-slider mdc-slider--range mdc-slider--discrete">
+                                                        <input class="mdc-slider__input" type="range" min="0" max="50" value="20" step="10" name="rangeStart" aria-label="Discrete range slider demo">
+                                                        <input class="mdc-slider__input" type="range" min="20" max="100" value="50" step="10" name="rangeEnd" aria-label="Discrete range slider demo">
+                                                        <div class="mdc-slider__track">
+                                                            <div class="mdc-slider__track--inactive"></div>
+                                                            <div class="mdc-slider__track--active">
+                                                                <div class="mdc-slider__track--active_fill"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="mdc-slider__thumb">
+                                                            <div class="mdc-slider__value-indicator-container" aria-hidden="true">
+                                                                <div class="mdc-slider__value-indicator">
+                                                                    <span class="mdc-slider__value-indicator-text">
+                                                                      20
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="mdc-slider__thumb-knob"></div>
+                                                        </div>
+                                                        <div class="mdc-slider__thumb">
+                                                            <div class="mdc-slider__value-indicator-container" aria-hidden="true">
+                                                                <div class="mdc-slider__value-indicator">
+                                                                    <span class="mdc-slider__value-indicator-text">
+                                                                      50
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="mdc-slider__thumb-knob"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="filter__item">
+                                                <div class="filter__title">
+                                                    <span>Диапазон светового потока</span>
+                                                    <svg width="15" height="9">
+                                                        <use xlink:href="#chevron-top"></use>
+                                                    </svg>
+                                                </div>
+                                                <div class="filter__dropdown ">
+                                                    <div class="js-range-slider mdc-slider mdc-slider--range mdc-slider--discrete">
+                                                        <input class="mdc-slider__input" type="range" min="0" max="50" value="20" step="10" name="rangeStart" aria-label="Discrete range slider demo">
+                                                        <input class="mdc-slider__input" type="range" min="20" max="100" value="50" step="10" name="rangeEnd" aria-label="Discrete range slider demo">
+                                                        <div class="mdc-slider__track">
+                                                            <div class="mdc-slider__track--inactive"></div>
+                                                            <div class="mdc-slider__track--active">
+                                                                <div class="mdc-slider__track--active_fill"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="mdc-slider__thumb">
+                                                            <div class="mdc-slider__value-indicator-container" aria-hidden="true">
+                                                                <div class="mdc-slider__value-indicator">
+                                                                    <span class="mdc-slider__value-indicator-text">
+                                                                      20
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="mdc-slider__thumb-knob"></div>
+                                                        </div>
+                                                        <div class="mdc-slider__thumb">
+                                                            <div class="mdc-slider__value-indicator-container" aria-hidden="true">
+                                                                <div class="mdc-slider__value-indicator">
+                                                                    <span class="mdc-slider__value-indicator-text">
+                                                                      50
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="mdc-slider__thumb-knob"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="filter__item">
+                                                <div class="filter__title">
+                                                    <span>IP</span>
+                                                    <svg width="15" height="9">
+                                                        <use xlink:href="#chevron-top"></use>
+                                                    </svg>
+                                                </div>
+                                                <div class="filter__dropdown">
+                                                    <div class="js-ip-slider mdc-slider mdc-slider--range mdc-slider--discrete">
+                                                        <input class="mdc-slider__input" type="range" min="0" max="50" value="20" step="10" name="rangeStart" aria-label="Discrete range slider demo">
+                                                        <input class="mdc-slider__input" type="range" min="20" max="100" value="50" step="10" name="rangeEnd" aria-label="Discrete range slider demo">
+                                                        <div class="mdc-slider__track">
+                                                            <div class="mdc-slider__track--inactive"></div>
+                                                            <div class="mdc-slider__track--active">
+                                                                <div class="mdc-slider__track--active_fill"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="mdc-slider__thumb">
+                                                            <div class="mdc-slider__value-indicator-container" aria-hidden="true">
+                                                                <div class="mdc-slider__value-indicator">
+                                                                    <span class="mdc-slider__value-indicator-text">
+                                                                      20
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="mdc-slider__thumb-knob"></div>
+                                                        </div>
+                                                        <div class="mdc-slider__thumb">
+                                                            <div class="mdc-slider__value-indicator-container" aria-hidden="true">
+                                                                <div class="mdc-slider__value-indicator">
+                                                                    <span class="mdc-slider__value-indicator-text">
+                                                                      50
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="mdc-slider__thumb-knob"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="filter__buttons">
+                                            <button class="button" type="submit">Применить</button>
+                                            <button class="button button--transparent button--blue" type="reset">Отменить</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-xl-6 offset-xl-1">
+                                    <div class="items-grid">
+                                        {{> item}}
+                                        {{> item}}
+                                        {{> item}}
+                                        {{> item}}
+                                        {{> item}}
+                                        {{> item}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {{> footer}}
+        </div>
+        {{> svg}}
+        {{> popups}}
+    </main>
+    <script src="{{root}}assets/js/app.js"></script>
+</body>
+</html>

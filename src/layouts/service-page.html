@@ -1,0 +1,174 @@
+{{!-- This is the base layout for your project, and will be used on every page. --}}
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    {{!— Required meta tags --}}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#4B77E4">
+    <link rel="shortcut icon" href="{{root}}assets/img/favicon.ico" type="image/x-icon">
+    <title>New Project</title>
+    <link rel="stylesheet" href="{{root}}assets/css/app.css">
+</head>
+
+<body>
+{{!-- Pages you create in the src/pages/ folder are inserted here when the flattened page is created. --}}
+
+<main role="main" class="layout layout--inner">
+    {{> preloader}}
+    <header class="header">
+        {{> header__in}}
+    </header>
+    <div class="layout__in">
+        <section class="section__wrapper">
+            <div class="section--borders">
+                <div class="section__in section--padding-small pt-0">
+                    <div class="container container--padding">
+                        {{> crumbs}}
+                        <div class="row">
+                            <div class="col-xl-10 offset-xl-1">
+                                <a class="mb-3 mb-md-4 d-flex align-items-center link-back" href="#">
+                                    <svg width="33" height="10">
+                                        <use xlink:href="#arrow-left-wide"></use>
+                                    </svg>
+                                    <span class="ml-2">Назад к услугам</span>
+                                </a>
+                                <div class="service-page__banner">
+                                    <div class="section__title section__title--h1 mb-3 mb-md-4">Аудит системы освещения</div>
+                                    <div class="service-page__banner-info">
+                                        <p>Компания «ЭФЛАЙТ» была зарегистрирована и работает уже более восьми лет, и наши специалисты понимают, что сейчас просто производить продукцию – даже очень востребованную рынком – недостаточно.
+                                            Время требует от нас комплексного подхода, который решает сразу целый ряд проблем.</p>
+                                        <p>Наша компания предлагает не только энергоэффективные светильники собственного производства, которые отвечают самым высоким европейским стандартам качества. Если Вы всерьёз подходите к вопросу сбережения электроэнергии на Вашем объекте – просто заменить лампочку может быть недостаточно. Специалисты «ЭФЛАЙТ» готовы решить любую Вашу проблему в этой области.</p>
+                                    </div>
+                                    <img class="service-page__banner-picture" src="{{root}}assets/img/services/service-big-1.jpg" alt="Услуга">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section__in service-page__advantages-wrapper section--padding pt-0">
+                    <div class="container container--padding">
+                        <div class="row">
+                            <div class="col-xl-10 offset-xl-1">
+                                <div class="row mb-3 mb-xl-5 service-page__advantages-top">
+                                    <div class="col-xl-5 order-2 order-xl-1 mb-3 mb-xl-0">
+                                        <div class="section__title section__title--h2">В результате светотехнического аудита вы получите</div>
+                                    </div>
+                                    <div class="col-xl-1 order-xl-2"></div>
+                                    <div class="col-xl-6 fontSmall order-1 order-xl-3 mb-3 mb-xl-0">
+                                        Наша компания проведет аудит системы освещения в Вашей организации, что позволит определить эффективность существующей системы освещения для повседневной деятельности на рабочих площадках, а также спрогнозировать меры по повышению возможностей освещения.
+                                    </div>
+                                </div>
+                                <div class="service-page__advantages">
+                                    <div class="service-page__advantage">
+                                        <div class="service-page__advantage-icon">
+                                            <svg width="62" height="73">
+                                                <use xlink:href="#service-advantage-1"></use>
+                                            </svg>
+                                        </div>
+                                        <span>Замер освещенности и пульсации</span>
+                                    </div>
+                                    <div class="service-page__advantage">
+                                        <div class="service-page__advantage-icon">
+                                            <svg width="69" height="57">
+                                                <use xlink:href="#service-advantage-2"></use>
+                                            </svg>
+                                        </div>
+                                        <span class="d-flex flex-column">
+                                            <span class="mb-2">Анализ и оценку системы освещения в разрезе каждого помещения</span>
+                                            <span class="fontSmall">отчет об установленной системы, преимуществах и недостатках</span>
+                                        </span>
+                                    </div>
+                                    <div class="service-page__advantage">
+                                        <div class="service-page__advantage-icon">
+                                            <svg width="64" height="59">
+                                                <use xlink:href="#service-advantage-3"></use>
+                                            </svg>
+                                        </div>
+                                        <span>Выводы и рекомендации по рациональному использованию системы освещения</span>
+                                    </div>
+                                    <div class="service-page__advantage">
+                                        <div class="service-page__advantage-icon">
+                                            <svg width="46" height="60">
+                                                <use xlink:href="#service-advantage-4"></use>
+                                            </svg>
+                                        </div>
+                                        <span>Индивидуальное консультирование</span>
+                                    </div>
+                                    <div class="service-page__advantage">
+                                        <div class="service-page__advantage-icon">
+                                            <svg width="54" height="54">
+                                                <use xlink:href="#service-advantage-5"></use>
+                                            </svg>
+                                        </div>
+                                        <span>Светотехнический расчет и создание двухмерной/трехмерной визуализации в специализированных программных пакетах.</span>
+                                    </div>
+                                    <div class="service-page__advantage">
+                                        <div class="service-page__advantage-icon">
+                                            <svg width="52" height="67">
+                                                <use xlink:href="#service-advantage-6"></use>
+                                            </svg>
+                                        </div>
+                                        <span>Комплекс мероприятий по использованию системы по результатам обследования, предложение по модернизации системы по результатам аудита</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section__wrapper background-gray">
+            <div class="section--borders">
+                <div class="section__in service-page__tasks section--padding-small">
+                    <div class="container container--padding">
+                        <div class="row no-gutters">
+                            <div class="col-xl-10 offset-xl-1">
+                                <div class="row">
+                                    <div class="col-xl-5">
+                                        <div class="d-flex flex-column justify-content-between h-100">
+                                            <div class="section__title section__title--h2 mb-3 mb-xl-0 order-2 order-xl-1">Полученные результаты аудита позволяют решить следующие задачи</div>
+                                            <div class="fontSmall order-1 order-xl-2 mb-3 mb-xl-0 ">Аудит системы освещения вашей организации поможет найти баланс между качественной, количественной и энергетической эффективностью, определить меры по ее повышению и возможностей их реализации.</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-1"></div>
+                                    <div class="col-xl-6">
+                                        <div class="d-flex flex-column justify-content-between">
+                                            <div>
+                                                <div class="service-page__task fontSmall">
+                                                    <span>1</span>
+                                                    <span>Определить наиболее подходящий тип и количество световых приборов, для создания определенного уровня освещенности</span>
+                                                </div>
+                                                <div class="service-page__task fontSmall">
+                                                    <span>2</span>
+                                                    <span>Определить установленную мощность подходящего осветительного оборудовани</span>
+                                                </div>
+                                                <div class="service-page__task fontSmall">
+                                                    <span>3</span>
+                                                    <span>Определить стоимость подходящей осветительной установки и монтажных работ по замене действующей системы освещения.</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="service-page__phone-wrapper">
+                                                <div class="fontSmall">Звоните:</div>
+                                                <a class="service-page__phone" href="tel:+7 (8482) 95-96-97">+7 (8482) 95-96-97</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {{> footer}}
+    </div>
+    {{> svg}}
+    {{> popups}}
+</main>
+<script src="{{root}}assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+
+  &--wide {
+    grid-template-columns: repeat(5, 1fr);
+
+    @include r(972) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include r(768) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include r(600) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 20px;
+    }
+
+    @include r(490) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}
+
+.item {
+  position: relative;
+  display: grid;
+  grid-row-gap: 15px;
+
+  &::before {
+    position: absolute;
+    content: '';
+    width: calc(100% + 50px);
+    height: calc(100% + 35px + 58px);
+    left: -25px;
+    top: -10px;
+    background-color: $white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    @include ease;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-40px);
+  }
+
+  &:hover {
+    z-index: 2;
+    &::before {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  }
+
+  @include r(600) {
+    grid-row-gap: 6px;
+  }
+
+  &__in {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__favorites {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  &__picture {
+    max-width: 70%;
+    max-height: 70%;
+    &-wrapper {
+      min-height: 240px;
+      @include flex-center;
+
+      @include r(972) {
+        min-height: 180px;
+        max-height: 180px;
+      }
+    }
+  }
+
+  &__info {
+    font-size: 0.8rem;
+    padding: 10px 0;
+    display: grid;
+    grid-template-columns: 1fr 0.3fr;
+    grid-column-gap: 10px;
+
+    @include r(600) {
+      padding: 5px 0;
+      grid-template-columns: 1fr 0.25fr;
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid #D4D4D4;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    width: 100%;
+    bottom: -60px;
+    left: 0;
+    right: 0;
+  }
+
+  //&.animate-in {
+  //  animation: zIndex 1s linear backwards;
+  //}
+
+  &.animate-out {
+    animation: zIndex 1s linear backwards;
+  }
+}
+
+@keyframes zIndex {
+  to {
+    z-index: 5;
+  }
+}

@@ -70,46 +70,6 @@
       padding-bottom: 30px;
     }
   }
-
-  &__navigation {
-    position: absolute;
-    right: 0;
-    bottom: 20px;
-    padding-left: 15px;
-    padding-right: 15px;
-    transform: rotate(-90deg) translate(100%, 12px);
-    transform-origin: right bottom;
-    display: flex;
-    align-items: center;
-    background-color: $white;
-
-    &:hover {
-      color: $blue;
-
-      svg {
-        stroke: $blue;
-      }
-    }
-
-    @include r(1572) {
-      transform: rotate(-90deg) translate(100%, 9px);
-      font-size: 0.8rem;
-    }
-
-    @include r(1200) {
-      display: none;
-    }
-
-    svg {
-      stroke: $dark;
-      @include ease;
-
-      @include r(1572) {
-        width: 40px;
-        height: 9px;
-      }
-    }
-  }
   @include r(768) {
     .swiper-container {
       overflow: visible;
@@ -152,14 +112,14 @@
 
   border-right: 1px solid $darkGray;
   border-bottom: 1px solid $darkGray;
-  pointer-events: none;
+  cursor: pointer;
 
   @include r(768) {
     width: 161px;
     height: 161px;
     border: 1px solid $darkGray;
     background-color: $white;
-    pointer-events: auto;
+    //pointer-events: auto;
   }
 
   &::before {
@@ -208,12 +168,8 @@
     display: none;
   }
 
-  &--active {
-    cursor: pointer;
-    pointer-events: visible;
-    &::before {
-      opacity: 1;
-    }
+  &--active,
+  &:hover {
     .project {
       &__logo {
         filter: grayscale(0);
@@ -221,6 +177,12 @@
       &__title {
         color: $blue;
       }
+    }
+  }
+
+  &--active {
+    &::before {
+      opacity: 1;
     }
   }
 

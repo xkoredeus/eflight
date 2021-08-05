@@ -99,9 +99,9 @@
         width: 100%;
         padding: 20px 0;
 
-        @include r(700) {
-          padding: 15px 0;
-        }
+        //@include r(700) {
+        //  padding: 25px 0;
+        //}
 
         &--with-dropdown {
           @include r(700) {
@@ -173,7 +173,7 @@
     height: calc(100vh - 145px);
     background: $blue;
     border-left: 1px solid $white;
-    padding: 74px 0 15px 50px;
+    padding: 94px 0 15px 50px;
     opacity: 0;
     visibility: hidden;
     @include cubic;

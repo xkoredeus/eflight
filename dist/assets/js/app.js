@@ -81,11 +81,38 @@ $('.js-menu').on('click', function () {
 $('.js-favorites').on('click', function (e) {
     e.preventDefault();
     $(this).toggleClass('active');
+
+    if ($(this).hasClass('active')) {
+        $(this).find('.favorites__text').html('В избранном');
+    } else {
+        $(this).find('.favorites__text').html('В избранное');
+    }
 });
+
+
+$('.js-toggle-compare-pop').on('click', function (e) {
+    e.preventDefault();
+    if ($(this).hasClass('active')) {
+        $(this).removeClass('active');
+        $(this).find('.js-compare-button-text').html('Сравнить');
+        $(this).next('.card__compare-pop').removeClass('active');
+    } else {
+        $(this).addClass('active');
+        $(this).find('.js-compare-button-text').html('Убрать из сравнения');
+        setTimeout(() => {
+            $(this).next('.card__compare-pop').addClass('active');
+        }, 0);
+    }
+});
+$('.js-close-compare-pop').on('click', function () {
+    $('.card__compare-pop').removeClass('active');
+});
+
 
 $(document).on('click', function (e) {
     var container = $('.header');
     var container2 = $('.projects__grid');
+    var container3 = $('.card__compare-pop.active');
 
     // if the target of the click isn't the container nor a descendant of the container
     if (!container.is(e.target) && container.has(e.target).length === 0)
@@ -93,11 +120,16 @@ $(document).on('click', function (e) {
         container.removeClass('header--active');
         $('.burger').removeClass('active');
         $('.header__search').removeClass('header__search--show-input');
-
-        if (!container2.is(e.target) && container2.has(e.target).length === 0) {
-            $('.project__popup').removeClass('project__popup--visible');
-        }
     }
+
+    if (!container2.is(e.target) && container2.has(e.target).length === 0) {
+        $('.project__popup').removeClass('project__popup--visible');
+    }
+
+    if (!container3.is(e.target) && container3.has(e.target).length === 0) {
+        $('.card__compare-pop').removeClass('active');
+    }
+
 });
 
 $(() => {
@@ -206,7 +238,6 @@ $(() => {
 
 $(() => {
     const newsSliderInitialSlide = $('.news-slider__wrapper .swiper-slide').length - "2";
-    console.log(newsSliderInitialSlide)
     const newsSlider = new Swiper(".js-news-slider", {
         freeMode: false,
         centeredSlides: true,
@@ -240,4 +271,11 @@ $(() => {
         // filter news on this event
         console.log('filter news on slideChange event');
     });
+});
+
+$('.js-clear-compare').on('click', function () {
+    $('.compare__body').children('.compare__column').remove();
+});
+$('.js-delete-compare').on('click', function () {
+    $(this).parents('.compare__column').remove();
 });

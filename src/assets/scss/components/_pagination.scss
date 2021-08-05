@@ -64,6 +64,7 @@ div {
             align-items: center;
             @include ease;
             svg {
+              position: relative;
               stroke: $darkGray;
               @include ease;
             }
@@ -71,6 +72,22 @@ div {
               color: $blue;
               svg {
                 stroke: $blue;
+              }
+            }
+
+            &_prev {
+              &:hover a {
+                svg {
+                  transform: translateX(-3px);
+                }
+              }
+            }
+
+            &_next {
+              &:hover a {
+                svg {
+                  transform: translateX(3px);
+                }
               }
             }
           }

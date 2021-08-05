@@ -6,6 +6,12 @@
     background-color: $blue;
     overflow: hidden;
 
+    &:hover {
+      .service-page__banner-picture {
+        transform: scale(1.05);
+      }
+    }
+
     @include r(600) {
       padding: 25px;
     }
@@ -19,6 +25,7 @@
       position: relative;
       font-size: 0.83rem;
       z-index: 1;
+
       @include r(1200) {
         text-shadow: 0 1px $darkGray;
       }
@@ -29,6 +36,7 @@
       right: 0;
       top: 0;
       max-height: 100%;
+      @include ease-in-out;
 
       @include r(600) {
         display: none;
@@ -170,9 +178,14 @@
     align-items: center;
     transform: translateX(-44px);
 
-    @include r(976) {
+    @include r(1200) {
       transform: translateX(0);
+      grid-gap: 30px;
       grid-template-columns: 30px 1fr;
+    }
+
+    @include r(768) {
+      grid-gap: 10px;
     }
 
     &:not(:last-child) {

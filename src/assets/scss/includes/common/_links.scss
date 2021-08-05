@@ -9,7 +9,8 @@
     color: $blue;
   }
 
-  &-back {
+  &-back,
+  &-forward {
     svg {
       stroke: $dark;
       @include ease;
@@ -19,6 +20,17 @@
       svg {
         stroke: $blue;
       }
+    }
+  }
+
+  &-back {
+    &:hover {
+      transform: translateX(-3px);
+    }
+  }
+  &-forward {
+    &:hover {
+      transform: translateX(3px);
     }
   }
   

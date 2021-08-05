@@ -66,9 +66,21 @@
     text-transform: uppercase;
   }
 
+  .button--icon {
+    svg {
+      @include ease;
+    }
+  }
+
   &:hover {
     .directory__title {
       color: $blue;
+    }
+
+    .button--icon {
+      svg {
+        transform: translateX(5px);
+      }
     }
   }
 }

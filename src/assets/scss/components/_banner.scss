@@ -39,6 +39,7 @@
   }
 
   &__navigation {
+    font-size: 0.87rem;
     position: absolute;
     color: $darkGray;
     left: 0;
@@ -78,7 +79,6 @@
   }
 
   &__picture {
-    content: '';
     position: absolute;
     left: 53%;
     top: 53%;

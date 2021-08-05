@@ -44,10 +44,11 @@
         display: inline-block;
         background-image: url('../img/icon--arrow.svg');
         margin-left: 5px;
+        margin-bottom: 3px;
         @include ct;
 
         @include r(1400) {
-          margin-bottom: 3px;
+          margin-bottom: 2.5px;
         }
 
         @include r(600) {

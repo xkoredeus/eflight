@@ -95,17 +95,34 @@
                                             </div>
                                         </div>
                                         <div class="col-xl-6 col-md-7 card__info-wrapper mt-4 mt-xl-0">
-                                            <div class="d-flex align-items-md-center align-items-start">
+                                            <div class="card__controls d-flex align-items-md-center align-items-start">
                                                 <button class="favorites js-favorites d-flex justify-content-center pl-0 mr-3">
                                                     {{> fav-icon}}
-                                                    <span class="ml-2">В избранное</span>
+                                                    <span class="ml-2 favorites__text">В избранное</span>
                                                 </button>
-                                                <a class="card__compare" href="#">
-                                                    <svg width="24" height="20">
-                                                        <use xlink:href="#compare"></use>
-                                                    </svg>
-                                                    <span class="ml-2">Сравнить</span>
-                                                </a>
+                                                <div class="card__compare-wrapper">
+                                                    <a class="card__compare js-toggle-compare-pop" href="#" aria-describedby="tooltip-id">
+                                                        <svg width="24" height="20">
+                                                            <use xlink:href="#compare"></use>
+                                                        </svg>
+                                                        <span class="ml-2 js-compare-button-text">Сравнить</span>
+                                                    </a>
+                                                    <div class="card__compare-pop">
+                                                        <div class="card__compare-pop-in">
+                                                            <button class="card__compare-pop-button js-close-compare-pop">
+                                                                <svg width="11" height="11">
+                                                                    <use xlink:href="#cross"></use>
+                                                                </svg>
+                                                            </button>
+                                                            <a class="d-flex flex-column" href="#">
+                                                                <div class="card__compare-pop-title js-compare-pop-title font-mBold mb-md-2">Перейти на страницу сравнения</div>
+                                                                <svg class="card__compare-pop-arrow" width="33" height="10">
+                                                                    <use xlink:href="#arrow-right-wide"></use>
+                                                                </svg>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <hr class="my-3 my-md-4">
                                             <div class="card__title section__title section__title--h2 mb-3 mb-md-4 md-xl-5">
@@ -405,19 +422,20 @@
                         </div>
                         <hr class="mt-3 mt-xl-5">
                         <div class="container container--padding">
-                            <div class="section--padding-small"><div class="row">
-                                <div class="col-xl-10 offset-xl-1">
-                                    <div class="d-flex flex-column flex-md-row justify-content-between align-items-sm-start align-items-md-center mb-3 mb-md-3 mb-xl-4">
-                                        <div class="section__title section__title--h2 mb-3 mb-md-0">Другие товары из этой категории</div>
-                                        <a class="button button--icon button--small-padding" href="#">
-                                            <svg class="button__icon mr-2" width="32" height="38">
-                                                <use xlink:href="#pdf"></use>
-                                            </svg>
-                                            <span>Скачать каталог</span>
-                                        </a>
+                            <div class="section--padding-small">
+                                <div class="row">
+                                    <div class="col-xl-10 offset-xl-1">
+                                        <div class="d-flex flex-column flex-md-row justify-content-between align-items-sm-start align-items-md-center mb-3 mb-md-3 mb-xl-4">
+                                            <div class="section__title section__title--h2 mb-3 mb-md-0">Другие товары из этой категории</div>
+                                            <a class="button button--icon button--small-padding" href="#">
+                                                <svg class="button__icon mr-2" width="32" height="38">
+                                                    <use xlink:href="#pdf"></use>
+                                                </svg>
+                                                <span>Скачать каталог</span>
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-xl-10 offset-xl-1">
+                                    <div class="col-xl-10 offset-xl-1">
                                     <div class="items-grid items-grid--wide">
                                         {{> item}}
                                         {{> item}}

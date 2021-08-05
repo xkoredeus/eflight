@@ -220,8 +220,15 @@
       background-color: $white;
       grid-template-rows: auto;
       grid-template-columns: repeat(3, 1fr);
-      width: calc(70px * 3);
+      //width: calc(70px * 3);
+      width: calc(100% - 69px);
       border-right: 1px solid $darkGray;
+    }
+
+    svg {
+      @include r(700) {
+        height: 22px;
+      }
     }
 
     @include r(475) {
@@ -272,6 +279,7 @@
     padding: 0;
     @include flex-center;
     border: none;
+    background-color: $tr !important;
 
     &-value {
       position: absolute;
@@ -297,12 +305,12 @@
 
     &:hover {
       svg {
-        fill: $white;
+        fill: $blue;
       }
 
-      .header__favorites-value {
-        background-color: $dark;
-      }
+      //.header__favorites-value {
+      //  background-color: $dark;
+      //}
     }
   }
 
@@ -339,11 +347,11 @@
       border-bottom: none;
       padding-left: 10px;
       padding-right: 10px;
+      padding-bottom: 0;
       background-color: $tr;
 
       @include r(1572) {
         padding-top: 0;
-        padding-bottom: 0;
         padding-left: 5px;
       }
 
@@ -380,6 +388,8 @@
     }
 
     svg {
+      width: 20px;
+      height: 20px;
       @include r(1572) {
         max-height: 18px;
         transform: translateY(-2px);

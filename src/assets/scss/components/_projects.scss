@@ -1,18 +1,27 @@
 .projects {
   position: relative;
 
-  &::before {
+  &::before,
+  &::after {
     position: absolute;
     content: '';
-    top: -60px;
     width: 1px;
-    height: calc(100% + 60px);
     background-color: $darkGray;
     left: calc(50% - 1px);
 
     @include r(1300) {
       display: none;
     }
+  }
+
+  &::before {
+    height: 140px;
+    top: -70px;
+  }
+
+  &::after {
+    height: 80px;
+    bottom: 0;
   }
 
   .section__title {
@@ -33,10 +42,29 @@
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(4, 168px);
-    border: 1px solid $darkGray;
+    border: 1px solid #E5E5E5;
     border-bottom: none;
     width: calc(100% + 30px);
     left: -25px;
+
+    //@include rmin(1200) {
+    //  &::before,
+    //  &::after {
+    //    position: absolute;
+    //    content: '';
+    //    width: 20px;
+    //    height: 50px;
+    //    background-color: $white;
+    //    left: -2px;
+    //  }
+    //
+    //  &::before {
+    //    top: -51px;
+    //  }
+    //  &::after {
+    //    bottom: -51px;
+    //  }
+    //}
 
     @include r(1572) {
       grid-template-rows: repeat(4, 140px);
@@ -110,14 +138,14 @@
   flex-direction: column;
   padding: 15px 10px;
 
-  border-right: 1px solid $darkGray;
-  border-bottom: 1px solid $darkGray;
+  border-right: 1px solid #E5E5E5;
+  border-bottom: 1px solid #E5E5E5;
   cursor: pointer;
 
   @include r(768) {
     width: 161px;
     height: 161px;
-    border: 1px solid $darkGray;
+    border: 1px solid #E5E5E5;
     background-color: $white;
     //pointer-events: auto;
   }
@@ -306,5 +334,13 @@
         text-align: center;
       }
     }
+  }
+}
+
+#projectsPopup {
+
+
+  .fancybox-close-small {
+    color: $dark !important;
   }
 }

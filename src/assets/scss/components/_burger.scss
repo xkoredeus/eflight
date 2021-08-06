@@ -34,6 +34,7 @@
 
     @include r(700) {
       width: 36px;
+      height: 2px;
     }
 
     &--1 {
@@ -57,11 +58,11 @@
       width: 100%;
     }
     .burger__line--3 {
-      transform: translateY(-10px) translateX(0) rotate(45deg * -1);
+      transform: translateY(-11px) translateX(0) rotate(45deg * -1);
       width: 100%;
 
       @include r(960) {
-        transform: translateY(-11px) translateX(0) rotate(45deg * -1);
+        //transform: translateY(-11px) translateX(0) rotate(45deg * -1);
       }
     }
   }

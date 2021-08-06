@@ -33,7 +33,7 @@
       bottom: 16%;
     }
 
-    @include r(1300) {
+    @include r(1200) {
       display: none;
     }
   }
@@ -49,6 +49,11 @@
     transform: rotate(-90deg) translateY(11px);
     transform-origin: left bottom;
     background-color: $gray;
+
+    span {
+      position: relative;
+      animation: sailing linear 1.2s infinite;
+    }
 
     &:hover {
       color: $blue;
@@ -211,5 +216,20 @@
         transform: translate(0, 0);
       }
     }
+  }
+}
+
+@keyframes sailing {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: 5px;
+  }
+  80% {
+    left: -3px;
+  }
+  100% {
+    left: 0;
   }
 }

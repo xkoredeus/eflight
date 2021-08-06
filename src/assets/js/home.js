@@ -139,6 +139,15 @@ if ($(window).width() < 768) {
     });
 
 }
+// $('.modal').fancybox({
+//     autoCenter: false,
+//     beforeShow: function() {
+//         var position = this.element.offset();
+//         $.fancybox._getPosition = function() {
+//             return position;
+//         }
+//     }
+// });
 
 
 $(() => {

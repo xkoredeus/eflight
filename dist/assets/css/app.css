@@ -23697,12 +23697,7 @@ a:hover {
     grid-template-columns: repeat(3, 1fr);
     width: calc(100% - 69px);
     border-right: 1px solid #7B7B7B;
-  }
-}
-
-@media only screen and (max-width: 700px) {
-  .header__info svg {
-    height: 22px;
+    border-left: none;
   }
 }
 
@@ -23741,6 +23736,8 @@ a:hover {
 
 .header__download {
   grid-column: 2/3;
+  width: 100%;
+  height: 100%;
   white-space: nowrap;
   padding-left: 5px;
   padding-right: 5px;
@@ -23801,10 +23798,12 @@ a:hover {
 .header__favorites svg {
   -webkit-transition: .4s all ease;
   transition: .4s all ease;
+  stroke: #293138;
+  fill: none;
 }
 
 .header__favorites:hover svg {
-  fill: #4D7AE1;
+  stroke: #4D7AE1;
 }
 
 .header__search {
@@ -23875,9 +23874,9 @@ a:hover {
 @media only screen and (max-width: 700px) {
   .header__search-input {
     position: absolute;
-    top: 64px;
+    top: 65px;
     width: calc(100vw - 32px);
-    right: calc(100% - 280px);
+    left: 0;
     padding: 15px;
     border-bottom: 1px solid #7B7B7B;
     background-color: #ffffff;
@@ -23899,9 +23898,9 @@ a:hover {
 @media only screen and (max-width: 700px) {
   .header__search-submit {
     position: absolute;
-    right: calc(100% - 279px);
+    right: -55px;
     height: 40px;
-    top: 70px;
+    top: 68px;
     display: block;
     background-color: #ffffff;
     opacity: 0;
@@ -23916,7 +23915,6 @@ a:hover {
 
 @media only screen and (max-width: 1572px) {
   .header__search svg {
-    max-height: 18px;
     -webkit-transform: translateY(-2px);
             transform: translateY(-2px);
   }
@@ -24125,6 +24123,7 @@ a:hover {
 @media only screen and (max-width: 700px) {
   .burger__line {
     width: 36px;
+    height: 2px;
   }
 }
 
@@ -24152,16 +24151,9 @@ a:hover {
 }
 
 .burger.active .burger__line--3 {
-  -webkit-transform: translateY(-10px) translateX(0) rotate(-45deg);
-          transform: translateY(-10px) translateX(0) rotate(-45deg);
+  -webkit-transform: translateY(-11px) translateX(0) rotate(-45deg);
+          transform: translateY(-11px) translateX(0) rotate(-45deg);
   width: 100%;
-}
-
-@media only screen and (max-width: 960px) {
-  .burger.active .burger__line--3 {
-    -webkit-transform: translateY(-11px) translateX(0) rotate(-45deg);
-            transform: translateY(-11px) translateX(0) rotate(-45deg);
-  }
 }
 
 .menu {
@@ -24409,7 +24401,7 @@ a:hover {
 
 @media only screen and (max-width: 700px) {
   .menu__dropdown-link:not(:last-child) {
-    margin-bottom: 6px;
+    margin-bottom: 20px;
   }
 }
 
@@ -24950,6 +24942,11 @@ div.pagination ul.pagination li.control_next:hover a svg {
   }
 }
 
+.popup__container--catalog {
+  position: relative;
+  padding: 0;
+}
+
 .popup__subtitle {
   max-width: 415px;
   margin-left: auto;
@@ -24970,6 +24967,63 @@ div.pagination ul.pagination li.control_next:hover a svg {
 .popup__fields textarea,
 .popup__fields select {
   width: 100%;
+}
+
+.popup-catalog {
+  max-width: 520px;
+}
+
+@media only screen and (max-width: 550px) {
+  .popup-catalog {
+    text-align: center;
+  }
+}
+
+.popup-catalog__in {
+  position: relative;
+  overflow: hidden;
+  padding: 35px 67px 35px 45px;
+}
+
+.popup-catalog__in:hover .popup-catalog__picture {
+  -webkit-transform: scale(1.07);
+          transform: scale(1.07);
+}
+
+@media only screen and (max-width: 550px) {
+  .popup-catalog__in {
+    padding: 25px 15px;
+  }
+}
+
+.popup-catalog__in > div {
+  position: relative;
+  z-index: 1;
+}
+
+.popup-catalog__description {
+  padding-right: 120px;
+}
+
+@media only screen and (max-width: 550px) {
+  .popup-catalog__description {
+    padding-right: 0;
+  }
+}
+
+.popup-catalog__picture {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  max-width: 250px;
+  -webkit-transition: .4s all ease;
+  transition: .4s all ease;
+}
+
+@media only screen and (max-width: 550px) {
+  .popup-catalog__picture {
+    display: none;
+  }
 }
 
 .captcha {
@@ -25021,7 +25075,7 @@ div.pagination ul.pagination li.control_next:hover a svg {
   }
 }
 
-@media only screen and (max-width: 1300px) {
+@media only screen and (max-width: 1200px) {
   .banner::after {
     display: none;
   }
@@ -25040,6 +25094,12 @@ div.pagination ul.pagination li.control_next:hover a svg {
   -webkit-transform-origin: left bottom;
           transform-origin: left bottom;
   background-color: #F8F8F8;
+}
+
+.banner__navigation span {
+  position: relative;
+  -webkit-animation: sailing linear 1.2s infinite;
+          animation: sailing linear 1.2s infinite;
 }
 
 .banner__navigation:hover {
@@ -25250,6 +25310,36 @@ div.pagination ul.pagination li.control_next:hover a svg {
           transform: translate(0, 0);
 }
 
+@-webkit-keyframes sailing {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: 5px;
+  }
+  80% {
+    left: -3px;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes sailing {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: 5px;
+  }
+  80% {
+    left: -3px;
+  }
+  100% {
+    left: 0;
+  }
+}
+
 .production {
   position: relative;
 }
@@ -25343,7 +25433,7 @@ div.pagination ul.pagination li.control_next:hover a svg {
   background-color: #7B7B7B;
 }
 
-@media only screen and (max-width: 1300px) {
+@media only screen and (max-width: 1200px) {
   .production__navigation::before {
     display: none;
   }
@@ -25540,7 +25630,7 @@ div.pagination ul.pagination li.control_next:hover a svg {
   background-color: #7B7B7B;
 }
 
-@media only screen and (max-width: 1300px) {
+@media only screen and (max-width: 1200px) {
   .issues::before, .issues::after {
     display: none;
   }
@@ -25723,7 +25813,7 @@ div.pagination ul.pagination li.control_next:hover a svg {
   left: calc(50% - 1px);
 }
 
-@media only screen and (max-width: 1300px) {
+@media only screen and (max-width: 1200px) {
   .services::before {
     display: none;
   }
@@ -25898,7 +25988,7 @@ div.pagination ul.pagination li.control_next:hover a svg {
   left: calc(50% - 1px);
 }
 
-@media only screen and (max-width: 1300px) {
+@media only screen and (max-width: 1200px) {
   .tools::before {
     display: none;
   }
@@ -25924,7 +26014,7 @@ div.pagination ul.pagination li.control_next:hover a svg {
   }
 }
 
-@media only screen and (max-width: 1300px) {
+@media only screen and (max-width: 1200px) {
   .tools::after {
     display: none;
   }
@@ -26007,7 +26097,7 @@ div.pagination ul.pagination li.control_next:hover a svg {
   left: calc(50% - 1px);
 }
 
-@media only screen and (max-width: 1300px) {
+@media only screen and (max-width: 1200px) {
   .projects::before, .projects::after {
     display: none;
   }
@@ -26780,6 +26870,10 @@ div.pagination ul.pagination li.control_next:hover a svg {
 }
 
 .card__controls .card__compare:hover svg {
+  fill: #4D7AE1;
+}
+
+.card__compare.active svg {
   fill: #4D7AE1;
 }
 

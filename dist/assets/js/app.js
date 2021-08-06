@@ -73,6 +73,224 @@ $(() => {
     });
 });
 
+$(() => {
+    // banner
+    const bannerAnimation = gsap.timeline({
+      defaults: {
+        ease: "power3.inOut"
+      },
+      scrollTrigger: {
+        trigger: '.banner',
+        start: "top center",
+      }
+    });
+
+    bannerAnimation.fromTo('.banner .section__title', {
+        autoAlpha: 0,
+        yPercent: -10,
+    }, {
+        autoAlpha: 1,
+        yPercent: 0,
+        duration: 0.6,
+    });
+    bannerAnimation.fromTo('.banner .banner__text', {
+        autoAlpha: 0,
+        yPercent: -10,
+    }, {
+        autoAlpha: 1,
+        yPercent: 0,
+        duration: 0.6,
+    });
+    bannerAnimation.fromTo('.banner .banner__picture', {
+        autoAlpha: 0,
+        scale: 0.99,
+    }, {
+        autoAlpha: 1,
+        scale: 1,
+        duration: 1,
+    }, "-=0.1");
+    bannerAnimation.fromTo('.banner .banner__grid', {
+        autoAlpha: 0,
+    }, {
+        autoAlpha: 1,
+        duration: 0.6,
+    }, "+=0.3");
+    // end banner
+
+    // production
+    const productionAnimation = gsap.timeline({
+        defaults: {
+            ease: "power3.inOut"
+        },
+        scrollTrigger: {
+            trigger: '.production',
+            start: "top center",
+        }
+    });
+
+    productionAnimation.fromTo('.production .section__title', {
+        autoAlpha: 0,
+        yPercent: -10,
+    }, {
+        autoAlpha: 1,
+        yPercent: 0,
+        duration: 0.6,
+    });
+    productionAnimation.fromTo('.production .production__description-in', {
+        autoAlpha: 0,
+        yPercent: -10,
+    }, {
+        autoAlpha: 1,
+        yPercent: 0,
+        duration: 0.6,
+    });
+    productionAnimation.fromTo('.production .production__row', {
+        autoAlpha: 0,
+    }, {
+        autoAlpha: 1,
+        duration: 0.6,
+    }, "+=0.3");
+    // end production
+
+    // service
+    const serviceAnimation = gsap.timeline({
+        defaults: {
+            ease: "power3.inOut"
+        },
+        scrollTrigger: {
+            trigger: '.services',
+            start: "top center",
+        },
+    });
+
+    serviceAnimation.fromTo('.services .section__title--h2', {
+        autoAlpha: 0,
+        yPercent: -10,
+    }, {
+        autoAlpha: 1,
+        yPercent: 0,
+        duration: 0.6,
+    });
+
+
+    serviceAnimation.fromTo('.services .services__row', {
+        autoAlpha: 0,
+    }, {
+        autoAlpha: 1,
+        duration: 1,
+    });
+    // end service
+
+    // tools
+    const toolsAnimation = gsap.timeline({
+        defaults: {
+            ease: "power3.inOut"
+        },
+        scrollTrigger: {
+            trigger: '.tools',
+            start: "top center",
+        }
+    });
+
+    toolsAnimation.fromTo('.tools .section__title', {
+        autoAlpha: 0,
+        yPercent: -10,
+    }, {
+        autoAlpha: 1,
+        yPercent: 0,
+        duration: 0.6,
+    });
+
+    toolsAnimation.fromTo('.tools .tools__intro', {
+        autoAlpha: 0,
+        yPercent: -10,
+    }, {
+        autoAlpha: 1,
+        yPercent: 0,
+        duration: 0.6,
+    });
+    toolsAnimation.fromTo('.tools .section__nav', {
+        autoAlpha: 0,
+    }, {
+        autoAlpha: 1,
+        duration: 0.6,
+    });
+    toolsAnimation.fromTo('.tools .tools__info', {
+        autoAlpha: 0,
+    }, {
+        autoAlpha: 1,
+        duration: 0.6,
+    });
+    // end tools
+
+    // projects
+    const projectsAnimation = gsap.timeline({
+        defaults: {
+            ease: "power3.inOut"
+        },
+        scrollTrigger: {
+            trigger: '.projects',
+            start: "top center",
+        }
+    });
+
+    projectsAnimation.fromTo('.projects .section__title', {
+        autoAlpha: 0,
+        yPercent: -10,
+    }, {
+        autoAlpha: 1,
+        yPercent: 0,
+        duration: 0.6,
+    });
+
+    projectsAnimation.fromTo('.projects .section__nav', {
+        autoAlpha: 0,
+    }, {
+        autoAlpha: 1,
+        duration: 0.6,
+    });
+    projectsAnimation.fromTo('.projects .projects__grid', {
+        autoAlpha: 0,
+    }, {
+        autoAlpha: 1,
+        duration: 0.6,
+    });
+    // end projects
+
+    ///
+    gsap.fromTo(
+        '.footer .container',
+    {
+        autoAlpha: 0,
+        yPercent: -10,
+    },
+    {
+        autoAlpha: 1,
+        yPercent: 0,
+        duration: 0.6,
+        scrollTrigger: {
+            trigger: '.footer',
+            start: "top 80%",
+            // markers: true,
+        }
+    });
+    gsap.fromTo('.footer .container',
+    {
+        autoAlpha: 0,
+        yPercent: -10,
+    },
+    {
+        autoAlpha: 1,
+        yPercent: 0,
+        duration: 0.6,
+        scrollTrigger: {
+          trigger: '.footer',
+          start: "top 80%",
+          // markers: true,
+        }
+    });
+});
+
 $('.js-menu').on('click', function () {
     $(this).toggleClass('active');
     $('.header').toggleClass('header--active');
@@ -278,4 +496,20 @@ $('.js-clear-compare').on('click', function () {
 });
 $('.js-delete-compare').on('click', function () {
     $(this).parents('.compare__column').remove();
+});
+
+
+$('.js-toggle-catalog-popup').on('click', function () {
+    console.log('click');
+    $.fancybox.open({
+        src  : '#catalogPop',
+        autoCenter: false,
+        beforeShow: function() {
+            var position = this.element.position();
+            $.fancybox._getPosition = function() {
+                console.log(position);
+                return position;
+            }
+        }
+    });
 });

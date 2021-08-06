@@ -169,6 +169,12 @@
   }
 
   &__compare {
+    &.active {
+      svg {
+        fill: $blue;
+      }
+    }
+
     &-wrapper {
       position: relative;
     }

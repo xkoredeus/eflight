@@ -9,7 +9,7 @@
     background-color: $darkGray;
     left: calc(50% - 1px);
 
-    @include r(1300) {
+    @include r(1200) {
       display: none;
     }
   }
@@ -141,6 +141,7 @@
   border-right: 1px solid #E5E5E5;
   border-bottom: 1px solid #E5E5E5;
   cursor: pointer;
+  //overflow: hidden;
 
   @include r(768) {
     width: 161px;

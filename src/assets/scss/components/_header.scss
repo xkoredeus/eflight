@@ -223,13 +223,14 @@
       //width: calc(70px * 3);
       width: calc(100% - 69px);
       border-right: 1px solid $darkGray;
+      border-left: none;
     }
 
-    svg {
-      @include r(700) {
-        height: 22px;
-      }
-    }
+    //svg {
+    //  @include r(700) {
+    //    height: 22px;
+    //  }
+    //}
 
     @include r(475) {
       opacity: 0;
@@ -254,6 +255,8 @@
 
   &__download {
     grid-column: 2/3;
+    width: 100%;
+    height: 100%;
     white-space: nowrap;
     padding-left: 5px;
     padding-right: 5px;
@@ -273,6 +276,7 @@
         display: none;
       }
     }
+
   }
 
   &__favorites {
@@ -301,11 +305,13 @@
 
     svg {
       @include ease;
+      stroke: $dark;
+      fill: none;
     }
 
     &:hover {
       svg {
-        fill: $blue;
+        stroke: $blue;
       }
 
       //.header__favorites-value {
@@ -357,9 +363,9 @@
 
       @include r(700) {
         position: absolute;
-        top: 64px;
+        top: 65px;
         width: calc(100vw - 32px);
-        right: calc(100% - 280px);
+        left: 0;
         padding: 15px;
         border-bottom: 1px solid $darkGray;
         background-color: $white;
@@ -377,9 +383,9 @@
 
       @include r(700) {
         position: absolute;
-        right: calc(100% - 279px);
+        right: -55px;
         height: 40px;
-        top: 70px;
+        top: 68px;
         display: block;
         background-color: $white;
         opacity: 0;
@@ -391,7 +397,7 @@
       width: 20px;
       height: 20px;
       @include r(1572) {
-        max-height: 18px;
+        //max-height: 18px;
         transform: translateY(-2px);
       }
     }

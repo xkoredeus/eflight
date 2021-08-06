@@ -1,4 +1,3 @@
-
 .popup {
   &__container {
     margin-top: 25px;
@@ -8,6 +7,11 @@
 
     @include r(600) {
       padding: 30px 25px;
+    }
+
+    &--catalog {
+      position: relative;
+      padding: 0;
     }
   }
 
@@ -28,6 +32,55 @@
     textarea,
     select {
       width: 100%;
+    }
+  }
+
+  &-catalog {
+    max-width: 520px;
+
+    @include r(550) {
+      text-align: center;
+    }
+
+    &__in {
+      position: relative;
+      overflow: hidden;
+      padding: 35px 67px 35px 45px;
+
+      &:hover {
+        .popup-catalog__picture {
+          transform: scale(1.07);
+        }
+      }
+
+      @include r(550) {
+        padding: 25px 15px;
+      }
+
+      & > div {
+        position: relative;
+        z-index: 1;
+      }
+    }
+
+    &__description {
+      padding-right: 120px;
+
+      @include r(550) {
+        padding-right: 0;
+      }
+    }
+
+    &__picture {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      max-width: 250px;
+      @include ease;
+
+      @include r(550) {
+        display: none;
+      }
     }
   }
 }

@@ -9,7 +9,7 @@
     height: 120px;
     background-color: $darkGray;
     left: calc(50% - 1px);
-    @include r(1300) {
+    @include r(1200) {
       display: none;
     }
   }
@@ -29,7 +29,7 @@
       width: 60px;
     }
 
-    @include r(1300) {
+    @include r(1200) {
       display: none;
     }
   }

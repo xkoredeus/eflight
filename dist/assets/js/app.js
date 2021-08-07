@@ -152,6 +152,41 @@ $(() => {
     }, "+=0.3");
     // end production
 
+    // issues
+    const issuesAnimation = gsap.timeline({
+        defaults: {
+            ease: "power3.inOut"
+        },
+        scrollTrigger: {
+            trigger: '.issues',
+            start: "top center",
+        },
+    });
+
+    issuesAnimation.fromTo('.issues .section__title--h2', {
+        autoAlpha: 0,
+        yPercent: -10,
+    }, {
+        autoAlpha: 1,
+        yPercent: 0,
+        duration: 0.6,
+    });
+
+
+    issuesAnimation.fromTo('.issues .section__nav', {
+        autoAlpha: 0,
+    }, {
+        autoAlpha: 1,
+        duration: 1,
+    });
+    issuesAnimation.fromTo('.issues .issue', {
+        autoAlpha: 0,
+    }, {
+        autoAlpha: 1,
+        duration: 1,
+    });
+    // end issues
+
     // service
     const serviceAnimation = gsap.timeline({
         defaults: {

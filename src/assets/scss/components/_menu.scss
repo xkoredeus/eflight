@@ -121,8 +121,8 @@
                 content: '';
                 height: 1px;
                 background-color: $white;
-                opacity: 0;
-                visibility: hidden;
+                //opacity: 0;
+                //visibility: hidden;
                 @include cubic
               }
 
@@ -174,9 +174,12 @@
     background: $blue;
     border-left: 1px solid $white;
     padding: 94px 0 15px 50px;
-    opacity: 0;
-    visibility: hidden;
     @include cubic;
+
+    @include r(700) {
+      opacity: 0;
+      visibility: hidden;
+    }
 
     @include r(1572) {
       height: calc(100vh - 101px);

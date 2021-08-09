@@ -14,9 +14,8 @@
   }
 
 
-  &::after {
+  &__decoration {
     position: absolute;
-    content: '';
     width: 50%;
     height: 1px;
     right: 0;
@@ -52,7 +51,7 @@
 
     span {
       position: relative;
-      animation: sailing linear 1.2s infinite;
+      //animation: sailing linear 1.2s infinite;
     }
 
     &:hover {
@@ -219,17 +218,17 @@
   }
 }
 
-@keyframes sailing {
-  0% {
-    left: 0;
-  }
-  50% {
-    left: 5px;
-  }
-  80% {
-    left: -3px;
-  }
-  100% {
-    left: 0;
-  }
-}
+//@keyframes sailing {
+//  0% {
+//    left: 0;
+//  }
+//  50% {
+//    left: 5px;
+//  }
+//  80% {
+//    left: -3px;
+//  }
+//  100% {
+//    left: 0;
+//  }
+//}

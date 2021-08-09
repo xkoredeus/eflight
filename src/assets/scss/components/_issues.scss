@@ -1,31 +1,29 @@
 .issues {
   position: relative;
 
-  &::before,
-  &::after {
+  &__decoration {
     position: absolute;
-    content: '';
     height: 1px;
     background-color: $darkGray;
 
     @include r(1200) {
       display: none;
     }
-  }
 
-  &::before {
-    width: 200px;
-    left: calc(50% - 196px);
-    transform-origin: right top;
-    transform: rotate(-45deg);
-  }
+    &--1 {
+      width: 200px;
+      left: calc(50% - 196px);
+      transform-origin: right top;
+      transform: rotate(-45deg);
+    }
 
-  &::after {
-    width: 200px;
-    left: 50%;
-    bottom: 0;
-    transform-origin: left bottom;
-    transform: rotate(-45deg);
+    &--2 {
+      width: 200px;
+      left: 50%;
+      bottom: 0;
+      transform-origin: left bottom;
+      transform: rotate(-45deg);
+    }
   }
 }
 

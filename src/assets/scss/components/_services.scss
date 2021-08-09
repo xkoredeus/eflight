@@ -1,16 +1,18 @@
 .services {
   position: relative;
 
-  &::before {
-    position: absolute;
-    content: '';
-    width: 1px;
-    height: 80px;
-    background-color: $darkGray;
-    left: calc(50% - 1px);
+  .section__in {
+    &::before {
+      position: absolute;
+      content: '';
+      width: 1px;
+      height: 80px;
+      background-color: $darkGray;
+      left: calc(50% - 1px);
 
-    @include r(1200) {
-      display: none;
+      @include r(1200) {
+        display: none;
+      }
     }
   }
 }

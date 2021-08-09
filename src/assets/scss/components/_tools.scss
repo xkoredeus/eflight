@@ -1,9 +1,7 @@
 .tools {
   position: relative;
-
-  &::before {
+  &__decoration--1 {
     position: absolute;
-    content: '';
     top: -60px;
     width: 1px;
     height: 120px;
@@ -14,9 +12,8 @@
     }
   }
 
-  &::after {
+  &__decoration--2 {
     position: absolute;
-    content: '';
     width: 100px;
     height: 1px;
     top: 60px;

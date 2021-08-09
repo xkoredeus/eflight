@@ -139,15 +139,305 @@ if ($(window).width() < 768) {
     });
 
 }
-// $('.modal').fancybox({
-//     autoCenter: false,
-//     beforeShow: function() {
-//         var position = this.element.offset();
-//         $.fancybox._getPosition = function() {
-//             return position;
-//         }
-//     }
-// });
+$(() => {
+    // banner
+    const bannerAnimation = gsap.timeline({
+        defaults: {
+            ease: "power3.inOut"
+        },
+        scrollTrigger: {
+            trigger: '.banner',
+            start: "top center",
+        }
+    });
+
+    bannerAnimation.fromTo('.banner .section__title', {
+        autoAlpha: 0,
+        yPercent: -10,
+    }, {
+        autoAlpha: 1,
+        yPercent: 0,
+        duration: 1.2,
+        // fix this param in work project
+        delay: 2
+    });
+
+    bannerAnimation.fromTo('.banner .banner__text', {
+        autoAlpha: 0,
+        yPercent: -10,
+    }, {
+        autoAlpha: 1,
+        yPercent: 0,
+        duration: 1.2,
+    }, "-=1.2");
+    bannerAnimation.fromTo('.banner .banner__grid', {
+        autoAlpha: 0,
+    }, {
+        autoAlpha: 1,
+        duration: 1.2,
+    }, "-=1.2");
+    bannerAnimation.fromTo('.banner .banner__picture', {
+        autoAlpha: 0,
+        scale: 0.99,
+    }, {
+        autoAlpha: 1,
+        scale: 1,
+        duration: 1,
+    }, "-=0.1");
+    bannerAnimation.fromTo('.banner__decoration', {
+        autoAlpha: 0,
+    }, {
+        autoAlpha: 1,
+        duration: 1,
+    }, "-=1");
+    // end banner
+
+    // production
+    const productionAnimation = gsap.timeline({
+        defaults: {
+            ease: "power3.inOut"
+        },
+        scrollTrigger: {
+            trigger: '.production',
+            start: "top center",
+        }
+    });
+
+    productionAnimation.fromTo('.production .section__title', {
+        autoAlpha: 0,
+        yPercent: -10,
+    }, {
+        autoAlpha: 1,
+        yPercent: 0,
+        duration: 0.6,
+    });
+    productionAnimation.fromTo('.production .production__description-in', {
+        autoAlpha: 0,
+        yPercent: -10,
+    }, {
+        autoAlpha: 1,
+        yPercent: 0,
+        duration: 0.6,
+    }, "-=0.6");
+    productionAnimation.fromTo('.production__first-col', {
+        autoAlpha: 0,
+    }, {
+        autoAlpha: 1,
+        duration: 0.6,
+    }, "-=0.6");
+    productionAnimation.fromTo('.production__navigation', {
+        autoAlpha: 0,
+    }, {
+        autoAlpha: 1,
+        duration: 0.6,
+    }, "+=0.3");
+    productionAnimation.fromTo('.production-slider__wrapper', {
+        autoAlpha: 0,
+    }, {
+        autoAlpha: 1,
+        duration: 0.6,
+    }, "-=0.6");
+    // end production
+
+    // issues
+    const issuesAnimation = gsap.timeline({
+        defaults: {
+            ease: "power3.inOut"
+        },
+        scrollTrigger: {
+            trigger: '.issues',
+            start: "top center",
+        },
+    });
+
+    issuesAnimation.fromTo('.issues', {
+        autoAlpha: 0,
+    }, {
+        autoAlpha: 1,
+        duration: 0.3,
+    });
+
+    issuesAnimation.fromTo('.issues .section__title--h2', {
+        autoAlpha: 0,
+        yPercent: -10,
+    }, {
+        autoAlpha: 1,
+        yPercent: 0,
+        duration: 0.6,
+    });
+
+
+    issuesAnimation.fromTo('.issues .section__nav', {
+        autoAlpha: 0,
+    }, {
+        autoAlpha: 1,
+        duration: 1,
+    }, "-=0.6");
+    issuesAnimation.fromTo('.issues .issue', {
+        autoAlpha: 0,
+    }, {
+        autoAlpha: 1,
+        duration: 1,
+    });
+    // end issues
+
+    // service
+    const serviceAnimation = gsap.timeline({
+        defaults: {
+            ease: "power3.inOut"
+        },
+        scrollTrigger: {
+            trigger: '.services',
+            start: "top center",
+        },
+    });
+
+    issuesAnimation.fromTo('.services .section__in', {
+        autoAlpha: 0,
+    }, {
+        autoAlpha: 1,
+        duration: 0.3,
+    });
+
+    serviceAnimation.fromTo('.services .section__title--h2', {
+        autoAlpha: 0,
+        yPercent: -10,
+    }, {
+        autoAlpha: 1,
+        yPercent: 0,
+        duration: 0.6,
+    });
+
+
+    serviceAnimation.fromTo('.services .services__row', {
+        autoAlpha: 0,
+    }, {
+        autoAlpha: 1,
+        duration: 1,
+    });
+    // end service
+
+    // tools
+    const toolsAnimation = gsap.timeline({
+        defaults: {
+            ease: "power3.inOut"
+        },
+        scrollTrigger: {
+            trigger: '.tools',
+            start: "top center",
+        }
+    });
+
+    toolsAnimation.fromTo('.tools__decoration', {
+        autoAlpha: 0,
+    }, {
+        autoAlpha: 1,
+        duration: 0.3,
+    });
+
+    toolsAnimation.fromTo('.tools .section__title', {
+        autoAlpha: 0,
+    }, {
+        autoAlpha: 1,
+        duration: 0.6,
+    });
+
+    toolsAnimation.fromTo('.tools .tools__intro', {
+        autoAlpha: 0,
+        yPercent: -10,
+    }, {
+        autoAlpha: 1,
+        yPercent: 0,
+        duration: 0.6,
+    },  "-=0.6");
+    toolsAnimation.fromTo('.tools .section__nav', {
+        autoAlpha: 0,
+    }, {
+        autoAlpha: 1,
+        duration: 0.6,
+    },  "-=0.6");
+    toolsAnimation.fromTo('.tools .tools__info', {
+        autoAlpha: 0,
+    }, {
+        autoAlpha: 1,
+        duration: 0.6,
+    });
+    // end tools
+
+    // projects
+    const projectsAnimation = gsap.timeline({
+        defaults: {
+            ease: "power3.inOut"
+        },
+        scrollTrigger: {
+            trigger: '.projects',
+            start: "top center",
+        }
+    });
+
+    projectsAnimation.fromTo('.projects__decoration', {
+        autoAlpha: 0,
+    }, {
+        autoAlpha: 1,
+        duration: 0.3,
+    });
+
+    projectsAnimation.fromTo('.projects .section__title', {
+        autoAlpha: 0,
+        yPercent: -10,
+    }, {
+        autoAlpha: 1,
+        yPercent: 0,
+        duration: 0.6,
+    });
+
+    projectsAnimation.fromTo('.projects .section__nav', {
+        autoAlpha: 0,
+    }, {
+        autoAlpha: 1,
+        duration: 0.6,
+    },  "-=0.6");
+    projectsAnimation.fromTo('.projects .projects__grid', {
+        autoAlpha: 0,
+    }, {
+        autoAlpha: 1,
+        duration: 0.6,
+    });
+    // end projects
+
+    ///
+    gsap.fromTo(
+        '.footer .container',
+        {
+            autoAlpha: 0,
+            yPercent: -10,
+        },
+        {
+            autoAlpha: 1,
+            yPercent: 0,
+            duration: 0.6,
+            scrollTrigger: {
+                trigger: '.footer',
+                start: "top 80%",
+                // markers: true,
+            }
+        });
+    gsap.fromTo('.footer .container',
+        {
+            autoAlpha: 0,
+            yPercent: -10,
+        },
+        {
+            autoAlpha: 1,
+            yPercent: 0,
+            duration: 0.6,
+            scrollTrigger: {
+                trigger: '.footer',
+                start: "top 80%",
+                // markers: true,
+            }
+        });
+});
 
 
 $(() => {

@@ -24313,8 +24313,6 @@ a:hover {
     content: '';
     height: 1px;
     background-color: #ffffff;
-    opacity: 0;
-    visibility: hidden;
     -webkit-transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
     transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
   }
@@ -24357,10 +24355,15 @@ a:hover {
   background: #4D7AE1;
   border-left: 1px solid #ffffff;
   padding: 94px 0 15px 50px;
-  opacity: 0;
-  visibility: hidden;
   -webkit-transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
   transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@media only screen and (max-width: 700px) {
+  .menu__dropdown {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 
 @media only screen and (max-width: 1572px) {
@@ -25049,9 +25052,8 @@ div.pagination ul.pagination li.control_next:hover a svg {
   }
 }
 
-.banner::after {
+.banner__decoration {
   position: absolute;
-  content: '';
   width: 50%;
   height: 1px;
   right: 0;
@@ -25064,19 +25066,19 @@ div.pagination ul.pagination li.control_next:hover a svg {
 }
 
 @media only screen and (max-width: 1572px) {
-  .banner::after {
+  .banner__decoration {
     bottom: 10%;
   }
 }
 
 @media only screen and (max-width: 1380px) {
-  .banner::after {
+  .banner__decoration {
     bottom: 16%;
   }
 }
 
 @media only screen and (max-width: 1200px) {
-  .banner::after {
+  .banner__decoration {
     display: none;
   }
 }
@@ -25098,8 +25100,6 @@ div.pagination ul.pagination li.control_next:hover a svg {
 
 .banner__navigation span {
   position: relative;
-  -webkit-animation: sailing linear 1.2s infinite;
-          animation: sailing linear 1.2s infinite;
 }
 
 .banner__navigation:hover {
@@ -25308,36 +25308,6 @@ div.pagination ul.pagination li.control_next:hover a svg {
 .banner__link--hovered::before, .banner__link:hover::before {
   -webkit-transform: translate(0, 0);
           transform: translate(0, 0);
-}
-
-@-webkit-keyframes sailing {
-  0% {
-    left: 0;
-  }
-  50% {
-    left: 5px;
-  }
-  80% {
-    left: -3px;
-  }
-  100% {
-    left: 0;
-  }
-}
-
-@keyframes sailing {
-  0% {
-    left: 0;
-  }
-  50% {
-    left: 5px;
-  }
-  80% {
-    left: -3px;
-  }
-  100% {
-    left: 0;
-  }
 }
 
 .production {
@@ -25623,20 +25593,19 @@ div.pagination ul.pagination li.control_next:hover a svg {
   position: relative;
 }
 
-.issues::before, .issues::after {
+.issues__decoration {
   position: absolute;
-  content: '';
   height: 1px;
   background-color: #7B7B7B;
 }
 
 @media only screen and (max-width: 1200px) {
-  .issues::before, .issues::after {
+  .issues__decoration {
     display: none;
   }
 }
 
-.issues::before {
+.issues__decoration--1 {
   width: 200px;
   left: calc(50% - 196px);
   -webkit-transform-origin: right top;
@@ -25645,7 +25614,7 @@ div.pagination ul.pagination li.control_next:hover a svg {
           transform: rotate(-45deg);
 }
 
-.issues::after {
+.issues__decoration--2 {
   width: 200px;
   left: 50%;
   bottom: 0;
@@ -25804,7 +25773,7 @@ div.pagination ul.pagination li.control_next:hover a svg {
   position: relative;
 }
 
-.services::before {
+.services .section__in::before {
   position: absolute;
   content: '';
   width: 1px;
@@ -25814,7 +25783,7 @@ div.pagination ul.pagination li.control_next:hover a svg {
 }
 
 @media only screen and (max-width: 1200px) {
-  .services::before {
+  .services .section__in::before {
     display: none;
   }
 }
@@ -25978,9 +25947,8 @@ div.pagination ul.pagination li.control_next:hover a svg {
   position: relative;
 }
 
-.tools::before {
+.tools__decoration--1 {
   position: absolute;
-  content: '';
   top: -60px;
   width: 1px;
   height: 120px;
@@ -25989,14 +25957,13 @@ div.pagination ul.pagination li.control_next:hover a svg {
 }
 
 @media only screen and (max-width: 1200px) {
-  .tools::before {
+  .tools__decoration--1 {
     display: none;
   }
 }
 
-.tools::after {
+.tools__decoration--2 {
   position: absolute;
-  content: '';
   width: 100px;
   height: 1px;
   top: 60px;
@@ -26009,13 +25976,13 @@ div.pagination ul.pagination li.control_next:hover a svg {
 }
 
 @media only screen and (max-width: 1572px) {
-  .tools::after {
+  .tools__decoration--2 {
     width: 60px;
   }
 }
 
 @media only screen and (max-width: 1200px) {
-  .tools::after {
+  .tools__decoration--2 {
     display: none;
   }
 }
@@ -26089,28 +26056,27 @@ div.pagination ul.pagination li.control_next:hover a svg {
   position: relative;
 }
 
-.projects::before, .projects::after {
+.projects__decoration {
   position: absolute;
-  content: '';
   width: 1px;
   background-color: #7B7B7B;
   left: calc(50% - 1px);
 }
 
-@media only screen and (max-width: 1200px) {
-  .projects::before, .projects::after {
-    display: none;
-  }
-}
-
-.projects::before {
+.projects__decoration--1 {
   height: 140px;
   top: -70px;
 }
 
-.projects::after {
+.projects__decoration--2 {
   height: 80px;
   bottom: 0;
+}
+
+@media only screen and (max-width: 1200px) {
+  .projects__decoration {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 768px) {

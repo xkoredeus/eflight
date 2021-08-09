@@ -1,27 +1,25 @@
 .projects {
   position: relative;
 
-  &::before,
-  &::after {
+  &__decoration {
     position: absolute;
-    content: '';
     width: 1px;
     background-color: $darkGray;
     left: calc(50% - 1px);
 
+    &--1 {
+      height: 140px;
+      top: -70px;
+    }
+
+    &--2 {
+      height: 80px;
+      bottom: 0;
+    }
+
     @include r(1200) {
       display: none;
     }
-  }
-
-  &::before {
-    height: 140px;
-    top: -70px;
-  }
-
-  &::after {
-    height: 80px;
-    bottom: 0;
   }
 
   .section__title {
@@ -46,25 +44,6 @@
     border-bottom: none;
     width: calc(100% + 30px);
     left: -25px;
-
-    //@include rmin(1200) {
-    //  &::before,
-    //  &::after {
-    //    position: absolute;
-    //    content: '';
-    //    width: 20px;
-    //    height: 50px;
-    //    background-color: $white;
-    //    left: -2px;
-    //  }
-    //
-    //  &::before {
-    //    top: -51px;
-    //  }
-    //  &::after {
-    //    bottom: -51px;
-    //  }
-    //}
 
     @include r(1572) {
       grid-template-rows: repeat(4, 140px);

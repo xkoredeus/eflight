@@ -25171,7 +25171,6 @@ div.pagination ul.pagination li.control_next:hover a svg {
 
 .banner__grid {
   position: relative;
-  height: calc(100vh - 145px);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -25181,7 +25180,6 @@ div.pagination ul.pagination li.control_next:hover a svg {
 
 @media only screen and (max-width: 1572px) {
   .banner__grid {
-    height: calc(100vh - 101px);
     width: calc(100% + 15px);
     left: -15px;
   }
@@ -25197,13 +25195,11 @@ div.pagination ul.pagination li.control_next:hover a svg {
 @media only screen and (max-width: 1200px) {
   .banner__grid {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
   }
 }
 
 @media only screen and (max-width: 768px) {
   .banner__grid {
-    height: 300px;
     width: calc(100% + 30px);
     left: -15px;
     margin-top: 30px;
@@ -25216,6 +25212,7 @@ div.pagination ul.pagination li.control_next:hover a svg {
   position: relative;
   overflow: hidden;
   z-index: 1;
+  padding-top: 100%;
 }
 
 @media only screen and (max-width: 768px) {
@@ -25232,8 +25229,6 @@ div.pagination ul.pagination li.control_next:hover a svg {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  padding-top: 10%;
-  padding-right: 10%;
   border-top: none;
   border-right: none;
 }
@@ -25251,15 +25246,6 @@ div.pagination ul.pagination li.control_next:hover a svg {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  padding-left: 15%;
-  padding-bottom: 15%;
-}
-
-@media only screen and (max-width: 768px) {
-  .banner__link--services {
-    padding-left: 10%;
-    padding-bottom: 10%;
-  }
 }
 
 .banner__link--services::before {
@@ -25288,16 +25274,29 @@ div.pagination ul.pagination li.control_next:hover a svg {
 }
 
 .banner__link span {
-  position: relative;
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
   font-size: 2rem;
   font-family: "MullerBold";
   line-height: 1;
   z-index: 1;
+  padding: 15%;
+}
+
+@media only screen and (max-width: 1572px) {
+  .banner__link span {
+    padding: 12%;
+  }
 }
 
 @media only screen and (max-width: 768px) {
   .banner__link span {
     font-size: 1rem;
+    padding: 10%;
   }
 }
 

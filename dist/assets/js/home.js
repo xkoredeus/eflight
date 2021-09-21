@@ -158,7 +158,8 @@ $(() => {
         autoAlpha: 1,
         yPercent: 0,
         duration: 1.2,
-        delay: 0.5
+        // fix this param in work project
+        delay: 2
     });
 
     bannerAnimation.fromTo('.banner .banner__text', {
